@@ -1,0 +1,71 @@
+.cooking-recipe {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem 1rem 1rem 2.5rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.recipe-step {
+  padding: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.recipe-blank {
+  display: inline-block;
+  min-width: 80px;
+  padding: 0.15rem 0.5rem;
+  border: 2px dashed #999;
+  background: #fef9c7;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.recipe-blank--filled {
+  border-style: solid;
+  background: #dbeafe;
+}
+
+.recipe-step--correct {
+  color: #166534;
+}
+
+.recipe-step--wrong {
+  color: #991b1b;
+}
+
+.cooking-verb-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.verb-chip {
+  padding: 0.4rem 0.8rem;
+  background: #fef3c7;
+  border: 1px solid #d97706;
+  border-radius: 4px;
+  cursor: grab;
+  user-select: none;
+}
+
+.cooking-feedback {
+  margin-top: 1rem;
+  min-height: 1.5rem;
+}
+
+.cooking-feedback--success {
+  color: #166534;
+}
+
+.cooking-feedback--error {
+  color: #991b1b;
+}

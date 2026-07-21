@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ESL Life Sim — Food</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/shop.css" />
+  <link rel="stylesheet" href="css/cooking.css" />
+  <link rel="stylesheet" href="css/pictionary.css" />
+</head>
+<body>
+
+  <p id="boot-error" class="boot-error hidden">Could not load game data. Please refresh.</p>
+
+  <!-- Stage 1: Meal Planning -->
+  <section id="stage-planning" class="stage" data-stage="1">
+    <header class="stage-header">
+      <h1>ESL Life Sim</h1>
+      <p class="stage-subtitle">Hmmm, what do I want to make today?</p>
+    </header>
+    <div id="planning-categories" class="category-picker"></div>
+    <div id="planning-meals" class="meal-list"></div>
+    <div id="planning-detail" class="meal-detail hidden"></div>
+    <button id="planning-continue" class="btn btn--primary hidden" type="button">Continue to shop</button>
+  </section>
+
+  <!-- Stage 2: Shop Selection -->
+  <section id="stage-shop-select" class="stage hidden" data-stage="2">
+    <header class="stage-header">
+      <h2>Where should we shop?</h2>
+    </header>
+    <div id="shop-cards" class="shop-cards"></div>
+  </section>
+
+  <!-- Stage 3: Shopping -->
+  <section id="stage-shopping" class="stage hidden" data-stage="3">
+    <header class="stage-header stage-header--compact">
+      <p id="game-label" class="game-label">Shopping</p>
+      <span id="score-display" class="score-display">0/0</span>
+    </header>
+    <div class="shop-layout">
+      <aside class="shop-side">
+        <div class="shop-list-panel">
+          <h3>Shopping list</h3>
+          <ul id="shop-list-rows" class="shop-list__rows"></ul>
+        </div>
+        <div id="shop-cart-wrap" class="shop-cart-wrap">
+          <h3>Basket</h3>
+          <div id="shop-cart" class="shop-cart">
+            <div id="shop-basket-items" class="shop-basket-items"></div>
+          </div>
+          <button id="goto-checkout-btn" class="btn btn--primary" type="button">Checkout</button>
+        </div>
+      </aside>
+      <main class="shop-main">
+        <div id="shop-category-tabs" class="shop-category-tabs"></div>
+        <div id="shop-shelf-wrap" class="shop-shelf-wrap">
+          <div id="shop-shelf-grid" class="shop-shelf-grid"></div>
+        </div>
+        <div id="shop-checkout" class="shop-checkout hidden">
+          <p id="checkout-total-words" class="checkout-total"></p>
+          <div class="shop-pay">
+            <p>Your payment <span id="payment-amount"></span></p>
+            <div id="shop-pay-tray" class="shop-pay-tray"></div>
+            <p>Wallet</p>
+            <div id="shop-wallet" class="shop-wallet"></div>
+          </div>
+          <div class="shop-checkout__actions">
+            <button id="checkout-back-btn" class="btn" type="button">← Edit basket</button>
+            <button id="pay-btn" class="btn btn--primary" type="button" disabled>Pay</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <p id="shop-status" class="shop-status" aria-live="polite"></p>
+  </section>
+
+  <!-- Stage 4: Cooking -->
+  <section id="stage-cooking" class="stage hidden" data-stage="4">
+    <header class="stage-header">
+      <h2>Cooking time!</h2>
+      <p class="stage-subtitle">Remember the recipe steps and fill in the verbs.</p>
+    </header>
+    <ol id="cooking-recipe" class="cooking-recipe"></ol>
+    <div id="cooking-verb-bank" class="cooking-verb-bank hidden"></div>
+    <button id="cooking-ready-btn" class="btn btn--primary" type="button">Ready to cook?</button>
+    <button id="cooking-submit-btn" class="btn btn--primary hidden" type="button">Submit recipe</button>
+    <p id="cooking-feedback" class="cooking-feedback"></p>
+  </section>
+
+  <!-- Stage 5: Eating / Completion -->
+  <section id="stage-eating" class="stage hidden" data-stage="5">
+    <header class="stage-header">
+      <h2 id="eating-title">Bon appétit!</h2>
+    </header>
+    <div id="eating-dish" class="eating-dish"></div>
+    <p id="eating-msg" class="eating-msg"></p>
+    <div class="eating-actions">
+      <button id="eating-play-again" class="btn btn--primary" type="button">Play Again</button>
+      <button id="eating-next-meal" class="btn" type="button">Next Meal</button>
+    </div>
+  </section>
+
+  <!-- Pictionary -->
+  <button id="pictionary-open" class="pictionary-fab" type="button" aria-label="Picture dictionary">?</button>
+
+  <div id="pictionary-modal" class="pictionary-modal hidden" role="dialog" aria-modal="true">
+    <div class="pictionary-card">
+      <header class="pictionary-header">
+        <h2>Picture Dictionary</h2>
+        <button id="pictionary-close" class="btn btn--close" type="button" aria-label="Close">✕</button>
+      </header>
+      <input id="pictionary-search" class="pictionary-search" type="search" placeholder="Search words..." />
+      <div id="pictionary-list" class="pictionary-list"></div>
+    </div>
+  </div>
+
+  <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/data-meals.js"></script>
+  <script src="js/data-items.js"></script>
+  <script src="js/stage-planning.js"></script>
+  <script src="js/stage-shop-select.js"></script>
+  <script src="js/stage-shopping.js"></script>
+  <script src="js/stage-cooking.js"></script>
+  <script src="js/stage-eating.js"></script>
+  <script src="js/pictionary.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

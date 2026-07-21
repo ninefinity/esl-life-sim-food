@@ -1,0 +1,50 @@
+{
+  "meals": {
+    "pbj_sandwich": {
+      "category": "snack",
+      "difficulty": 1,
+      "label": "Peanut Butter Jelly Sandwich",
+      "ingredients": ["bread", "peanut-butter", "jelly"],
+      "recipeSteps": [
+        { "verb": "spread", "text": "Spread the peanut butter on the bread." },
+        { "verb": "spread", "text": "Spread the jelly on the other slice." },
+        { "verb": "put", "text": "Put the slices together." }
+      ],
+      "image": "pbj.png"
+    },
+    "oatmeal": {
+      "category": "breakfast",
+      "difficulty": 1,
+      "label": "Oatmeal",
+      "ingredients": ["oats", "milk", "butter"],
+      "recipeSteps": [
+        { "verb": "pour", "text": "Pour the milk into a pot." },
+        { "verb": "add", "text": "Add the oats to the pot." },
+        { "verb": "stir", "text": "Stir until the oatmeal is thick." }
+      ],
+      "image": "oatmeal.png"
+    },
+    "garden_salad": {
+      "category": "lunch",
+      "difficulty": 1,
+      "label": "Garden Salad",
+      "ingredients": ["lettuce", "tomato", "carrot"],
+      "recipeSteps": [
+        { "verb": "wash", "text": "Wash the lettuce and vegetables." },
+        { "verb": "chop", "text": "Chop the tomato and carrot." },
+        { "verb": "mix", "text": "Mix everything in a bowl." }
+      ],
+      "image": "salad.png"
+    }
+  },
+  "verbs": {
+    "spread": { "label": "spread", "definition": "To put something over a surface in a thin layer." },
+    "put": { "label": "put", "definition": "To place something somewhere." },
+    "pour": { "label": "pour", "definition": "To make a liquid flow from a container." },
+    "add": { "label": "add", "definition": "To put something together with something else." },
+    "stir": { "label": "stir", "definition": "To mix something by moving a spoon around." },
+    "wash": { "label": "wash", "definition": "To clean something with water." },
+    "chop": { "label": "chop", "definition": "To cut something into pieces with a knife." },
+    "mix": { "label": "mix", "definition": "To combine two or more things together." }
+  }
+}

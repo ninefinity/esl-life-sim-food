@@ -1,0 +1,215 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #f5f0e8;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.stage {
+  min-height: 100vh;
+  padding: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.stage-header {
+  margin-bottom: 1.5rem;
+}
+
+.stage-header h1,
+.stage-header h2 {
+  margin: 0 0 0.25rem;
+}
+
+.stage-subtitle {
+  margin: 0;
+  color: #555;
+}
+
+.boot-error {
+  background: #fee;
+  color: #900;
+  padding: 1rem;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #333;
+  background: #fff;
+  cursor: pointer;
+  font: inherit;
+  border-radius: 4px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: #2d6a4f;
+  color: #fff;
+  border-color: #2d6a4f;
+}
+
+.btn--category {
+  margin: 0.25rem;
+}
+
+.btn--surprise {
+  background: #fef3c7;
+}
+
+.category-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.meal-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.meal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  min-width: 120px;
+  border-radius: 4px;
+}
+
+.meal-card__emoji {
+  font-size: 2rem;
+}
+
+.meal-detail {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.ingredient-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.5rem;
+}
+
+.placeholder-text {
+  color: #666;
+  font-style: italic;
+}
+
+.shop-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.shop-card {
+  flex: 1;
+  min-width: 180px;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 4px;
+  position: relative;
+}
+
+.shop-card--locked {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.shop-card__label {
+  display: block;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.shop-card__desc {
+  display: block;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.shop-card__lock {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.eating-dish {
+  text-align: center;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.eating-dish__emoji {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.eating-msg {
+  text-align: center;
+  color: #555;
+}
+
+.eating-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.confetti-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -10px;
+  width: 8px;
+  height: 8px;
+  animation: confetti-fall 2s ease-in forwards;
+}
+
+@keyframes confetti-fall {
+  to {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
