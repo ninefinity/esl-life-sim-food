@@ -220,6 +220,14 @@
   color: #5d4037;
 }
 
+.mini-games-score {
+  text-align: center;
+  margin: 0 0 0.35rem;
+  font-family: var(--font-playful);
+  font-size: 1.15rem;
+  color: #2e7d32;
+}
+
 .mini-spell__progress {
   text-align: center;
   font-size: 0.85rem;

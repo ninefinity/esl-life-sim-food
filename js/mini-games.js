@@ -1,5 +1,13 @@
 'use strict';
 
+const MAX_SPELL_ATTEMPTS = 2;
+const REVEAL_MS = 1800;
+
+/** Words can be multi-word ("peanut butter"), so collapse whitespace too. */
+function normalizeAnswer(value) {
+  return String(value ?? '').trim().toLowerCase().replace(/\s+/g, ' ');
+}
+
 const MiniGames = {
   types: {
     spelling: { label: 'Spelling', ready: true },
@@ -116,19 +124,42 @@ const MiniGames = {
       const feedback = document.getElementById('mini-spell-feedback');
       input?.focus();
 
+      let attempts = 0;
+      let resolved = false;
+
+      const advance = () => {
+        index += 1;
+        renderRound();
+      };
+
       const check = () => {
-        const answer = (input?.value || '').trim().toLowerCase();
+        if (resolved) return;
+        const answer = normalizeAnswer(input?.value);
         if (!answer) {
           if (feedback) feedback.textContent = 'Type a word first.';
           return;
         }
-        if (answer === card.word.toLowerCase()) {
+
+        if (answer === normalizeAnswer(card.word)) {
+          resolved = true;
           correct += 1;
-          index += 1;
-          renderRound();
-        } else if (feedback) {
-          feedback.textContent = `Try again! The word starts with "${card.word[0]}".`;
+          advance();
+          return;
         }
+
+        attempts += 1;
+        if (attempts < MAX_SPELL_ATTEMPTS) {
+          if (feedback) {
+            feedback.textContent = `Try again! The word starts with "${card.word[0]}".`;
+          }
+          return;
+        }
+
+        // Out of attempts: show the answer, move on, and don't score it.
+        resolved = true;
+        if (feedback) feedback.textContent = `The word was "${card.word}".`;
+        if (input) input.disabled = true;
+        window.setTimeout(advance, REVEAL_MS);
       };
 
       document.getElementById('mini-spell-check')?.addEventListener('click', check);
@@ -157,9 +188,11 @@ const MiniGames = {
     StageMap.hideLowBalanceToast?.();
 
     const payoutLabel = WordWallet.formatCentsShort(payoutCents);
+    const praise = correct === total ? 'Perfect!' : 'Good work!';
     if (this.panelEl) {
       this.panelEl.innerHTML = `
-        <p class="mini-games-win">Great job! You earned <strong>${escapeHtml(payoutLabel)}</strong>.</p>
+        <p class="mini-games-score">${praise} You spelled <strong>${correct} of ${total}</strong>.</p>
+        <p class="mini-games-win">You earned <strong>${escapeHtml(payoutLabel)}</strong>.</p>
         <button class="btn btn--primary" type="button" id="mini-games-again">Play again</button>
       `;
     }

@@ -354,6 +354,7 @@ function leaveCheckout() {
   if (phase !== 'checkout' || completed) return;
   phase = 'shop';
   paymentCounts = WordWallet.cloneWallet({});
+  GameState.setShoppingPhase('store', { silent: true });
   renderPhase();
 }
 
@@ -492,6 +493,7 @@ function submitPayment() {
   syncProgressCounts();
   renderList();
   showPostCheckout(GameState.allIngredientsPurchased());
+  GameState.setShoppingPhase('store', { silent: true });
   StageMap.render?.();
 }
 

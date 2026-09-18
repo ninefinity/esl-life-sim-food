@@ -3,6 +3,9 @@
     "green-apple": {
       "emoji": "🍏",
       "label": "green apple",
+      "word": "green apple",
+      "container": null,
+      "countable": true,
       "plural": "green apples",
       "category": "veg",
       "eslLabel": "I need a green apple",
@@ -18,6 +21,9 @@
     "red-apple": {
       "emoji": "🍎",
       "label": "red apple",
+      "word": "red apple",
+      "container": null,
+      "countable": true,
       "plural": "red apples",
       "category": "veg",
       "eslLabel": "I need a red apple",
@@ -33,6 +39,9 @@
     "banana": {
       "emoji": "🍌",
       "label": "banana",
+      "word": "banana",
+      "container": null,
+      "countable": true,
       "plural": "bananas",
       "category": "veg",
       "eslLabel": "I need a banana",
@@ -49,6 +58,9 @@
     "orange": {
       "emoji": "🍊",
       "label": "orange",
+      "word": "orange",
+      "container": null,
+      "countable": true,
       "plural": "oranges",
       "category": "veg",
       "eslLabel": "I need an orange",
@@ -65,6 +77,9 @@
     "grapes": {
       "emoji": "🍇",
       "label": "grapes",
+      "word": "grapes",
+      "container": null,
+      "countable": false,
       "category": "veg",
       "eslLabel": "I need grapes",
       "definition": "Small purple or green fruits in a bunch.",
@@ -80,6 +95,9 @@
     "tomato": {
       "emoji": "🍅",
       "label": "tomato",
+      "word": "tomato",
+      "container": null,
+      "countable": true,
       "plural": "tomatoes",
       "category": "veg",
       "eslLabel": "I need a tomato",
@@ -96,6 +114,9 @@
     "carrot": {
       "emoji": "🥕",
       "label": "carrot",
+      "word": "carrot",
+      "container": null,
+      "countable": true,
       "plural": "carrots",
       "category": "veg",
       "eslLabel": "I need a carrot",
@@ -112,6 +133,9 @@
     "lettuce": {
       "emoji": "🥬",
       "label": "head of lettuce",
+      "word": "lettuce",
+      "container": "head",
+      "countable": false,
       "plural": "heads of lettuce",
       "category": "veg",
       "eslLabel": "I need lettuce",
@@ -128,6 +152,9 @@
     "milk": {
       "emoji": "🥛",
       "label": "bottle of milk",
+      "word": "milk",
+      "container": "bottle",
+      "countable": false,
       "plural": "bottles of milk",
       "category": "dairy",
       "eslLabel": "I need milk",
@@ -144,6 +171,9 @@
     "cheese": {
       "emoji": "🧀",
       "label": "block of cheese",
+      "word": "cheese",
+      "container": "block",
+      "countable": false,
       "plural": "blocks of cheese",
       "category": "dairy",
       "eslLabel": "I need cheese",
@@ -161,6 +191,9 @@
     "yogurt": {
       "emoji": "🥛",
       "label": "pot of yogurt",
+      "word": "yogurt",
+      "container": "pot",
+      "countable": false,
       "plural": "pots of yogurt",
       "category": "dairy",
       "eslLabel": "I need yogurt",
@@ -177,6 +210,9 @@
     "butter": {
       "emoji": "🧈",
       "label": "block of butter",
+      "word": "butter",
+      "container": "block",
+      "countable": false,
       "plural": "blocks of butter",
       "category": "dairy",
       "eslLabel": "I need butter",
@@ -193,6 +229,9 @@
     "eggs": {
       "emoji": "🥚",
       "label": "egg",
+      "word": "egg",
+      "container": null,
+      "countable": true,
       "plural": "eggs",
       "category": "dairy",
       "eslLabel": "I need eggs",
@@ -209,6 +248,9 @@
     "bread": {
       "emoji": "🍞",
       "label": "loaf of bread",
+      "word": "bread",
+      "container": "loaf",
+      "countable": false,
       "plural": "loaves of bread",
       "category": "bakery",
       "eslLabel": "I need bread",
@@ -227,6 +269,9 @@
     "croissant": {
       "emoji": "🥐",
       "label": "croissant",
+      "word": "croissant",
+      "container": null,
+      "countable": true,
       "plural": "croissants",
       "category": "bakery",
       "eslLabel": "I need a croissant",
@@ -244,6 +289,9 @@
     "bagel": {
       "emoji": "🥯",
       "label": "bagel",
+      "word": "bagel",
+      "container": null,
+      "countable": true,
       "plural": "bagels",
       "category": "bakery",
       "eslLabel": "I need a bagel",
@@ -260,6 +308,9 @@
     "muffin": {
       "emoji": "🧁",
       "label": "muffin",
+      "word": "muffin",
+      "container": null,
+      "countable": true,
       "plural": "muffins",
       "category": "bakery",
       "eslLabel": "I need a muffin",
@@ -277,6 +328,9 @@
     "peanut-butter": {
       "emoji": "🥜",
       "label": "jar of peanut butter",
+      "word": "peanut butter",
+      "container": "jar",
+      "countable": false,
       "plural": "jars of peanut butter",
       "category": "pantry",
       "eslLabel": "I need peanut butter",
@@ -293,6 +347,9 @@
     "jelly": {
       "emoji": "🍇",
       "label": "jar of jelly",
+      "word": "jelly",
+      "container": "jar",
+      "countable": false,
       "plural": "jars of jelly",
       "category": "pantry",
       "eslLabel": "I need jelly",
@@ -309,6 +366,9 @@
     "oats": {
       "emoji": "🥣",
       "label": "box of oats",
+      "word": "oats",
+      "container": "box",
+      "countable": false,
       "plural": "boxes of oats",
       "category": "pantry",
       "eslLabel": "I need oats",
@@ -325,6 +385,9 @@
     "cereal": {
       "emoji": "🥣",
       "label": "box of cereal",
+      "word": "cereal",
+      "container": "box",
+      "countable": false,
       "plural": "boxes of cereal",
       "category": "pantry",
       "eslLabel": "I need cereal",
@@ -341,6 +404,9 @@
     "chips": {
       "emoji": "🍟",
       "label": "bag of chips",
+      "word": "chips",
+      "container": "bag",
+      "countable": false,
       "plural": "bags of chips",
       "category": "sweets",
       "eslLabel": "I need chips",
@@ -357,6 +423,9 @@
     "cookie": {
       "emoji": "🍪",
       "label": "cookie",
+      "word": "cookie",
+      "container": null,
+      "countable": true,
       "plural": "cookies",
       "category": "sweets",
       "eslLabel": "I need a cookie",
@@ -373,6 +442,9 @@
     "chocolate": {
       "emoji": "🍫",
       "label": "bar of chocolate",
+      "word": "chocolate",
+      "container": "bar",
+      "countable": false,
       "plural": "bars of chocolate",
       "category": "sweets",
       "eslLabel": "I need chocolate",
@@ -390,6 +462,9 @@
     "popcorn": {
       "emoji": "🍿",
       "label": "bag of popcorn",
+      "word": "popcorn",
+      "container": "bag",
+      "countable": false,
       "plural": "bags of popcorn",
       "category": "sweets",
       "eslLabel": "I need popcorn",
@@ -406,6 +481,9 @@
     "juice": {
       "emoji": "🧃",
       "label": "carton of juice",
+      "word": "juice",
+      "container": "carton",
+      "countable": false,
       "plural": "cartons of juice",
       "category": "pantry",
       "eslLabel": "I need juice",
@@ -422,6 +500,9 @@
     "water": {
       "emoji": "💧",
       "label": "bottle of water",
+      "word": "water",
+      "container": "bottle",
+      "countable": false,
       "plural": "bottles of water",
       "category": "pantry",
       "eslLabel": "I need water",
@@ -438,6 +519,9 @@
     "bowl": {
       "emoji": "🥣",
       "label": "bowl",
+      "word": "bowl",
+      "container": null,
+      "countable": true,
       "plural": "bowls",
       "category": "pantry",
       "eslLabel": "I need a bowl",
@@ -455,6 +539,9 @@
     "honey": {
       "emoji": "🍯",
       "label": "jar of honey",
+      "word": "honey",
+      "container": "jar",
+      "countable": false,
       "plural": "jars of honey",
       "category": "pantry",
       "eslLabel": "I need honey",
@@ -472,6 +559,9 @@
     "salt": {
       "emoji": "🧂",
       "label": "salt",
+      "word": "salt",
+      "container": null,
+      "countable": false,
       "category": "pantry",
       "eslLabel": "I need salt",
       "definition": "White crystals used to season food.",
@@ -487,6 +577,9 @@
     "pepper": {
       "emoji": "🌶️",
       "label": "pepper",
+      "word": "pepper",
+      "container": null,
+      "countable": false,
       "category": "pantry",
       "eslLabel": "I need pepper",
       "definition": "A spice that adds a sharp taste.",
@@ -502,6 +595,9 @@
     "onion": {
       "emoji": "🧅",
       "label": "onion",
+      "word": "onion",
+      "container": null,
+      "countable": true,
       "plural": "onions",
       "category": "veg",
       "eslLabel": "I need an onion",
@@ -518,6 +614,9 @@
     "potato": {
       "emoji": "🥔",
       "label": "potato",
+      "word": "potato",
+      "container": null,
+      "countable": true,
       "plural": "potatoes",
       "category": "veg",
       "eslLabel": "I need a potato",
@@ -534,6 +633,9 @@
     "broth": {
       "emoji": "🥫",
       "label": "carton of broth",
+      "word": "broth",
+      "container": "carton",
+      "countable": false,
       "plural": "cartons of broth",
       "category": "pantry",
       "eslLabel": "I need broth",
@@ -550,6 +652,9 @@
     "pasta": {
       "emoji": "🍝",
       "label": "box of pasta",
+      "word": "pasta",
+      "container": "box",
+      "countable": false,
       "plural": "boxes of pasta",
       "category": "pantry",
       "eslLabel": "I need pasta",
@@ -566,6 +671,9 @@
     "tomato-sauce": {
       "emoji": "🍅",
       "label": "jar of tomato sauce",
+      "word": "tomato sauce",
+      "container": "jar",
+      "countable": false,
       "plural": "jars of tomato sauce",
       "category": "pantry",
       "eslLabel": "I need tomato sauce",
@@ -583,6 +691,9 @@
     "garlic": {
       "emoji": "🧄",
       "label": "garlic",
+      "word": "garlic",
+      "container": null,
+      "countable": false,
       "category": "veg",
       "eslLabel": "I need garlic",
       "definition": "A strong-smelling bulb used for flavor.",
@@ -599,6 +710,9 @@
     "apple": {
       "emoji": "🍎",
       "label": "apple",
+      "word": "apple",
+      "container": null,
+      "countable": true,
       "plural": "apples",
       "category": "veg",
       "eslLabel": "I need an apple",
@@ -615,6 +729,9 @@
     "flour": {
       "emoji": "🌾",
       "label": "bag of flour",
+      "word": "flour",
+      "container": "bag",
+      "countable": false,
       "plural": "bags of flour",
       "category": "bakery",
       "eslLabel": "I need flour",
@@ -632,6 +749,9 @@
     "sugar": {
       "emoji": "🍬",
       "label": "bag of sugar",
+      "word": "sugar",
+      "container": "bag",
+      "countable": false,
       "plural": "bags of sugar",
       "category": "sweets",
       "eslLabel": "I need sugar",
@@ -649,6 +769,9 @@
     "chocolate-chips": {
       "emoji": "🍫",
       "label": "bag of chocolate chips",
+      "word": "chocolate chips",
+      "container": "bag",
+      "countable": false,
       "plural": "bags of chocolate chips",
       "category": "sweets",
       "eslLabel": "I need chocolate chips",
@@ -666,6 +789,9 @@
     "corn-fresh": {
       "emoji": "🌽",
       "label": "fresh corn",
+      "word": "corn",
+      "container": null,
+      "countable": false,
       "plural": "ears of fresh corn",
       "category": "veg",
       "group": "corn",
@@ -683,6 +809,9 @@
     "corn-on-the-cob": {
       "emoji": "🌽",
       "label": "corn on the cob",
+      "word": "corn",
+      "container": null,
+      "countable": false,
       "plural": "ears of corn on the cob",
       "category": "veg",
       "group": "corn",
@@ -700,6 +829,9 @@
     "corn-canned": {
       "emoji": "🌽",
       "label": "can of corn",
+      "word": "corn",
+      "container": "can",
+      "countable": false,
       "plural": "cans of corn",
       "category": "pantry",
       "group": "corn",
@@ -718,6 +850,9 @@
     "corn-frozen": {
       "emoji": "🌽",
       "label": "frozen corn",
+      "word": "corn",
+      "container": null,
+      "countable": false,
       "plural": "bags of frozen corn",
       "category": "frozen",
       "group": "corn",
@@ -735,6 +870,9 @@
     "frozen-pizza-base": {
       "emoji": "🍕",
       "label": "frozen pizza base",
+      "word": "pizza base",
+      "container": null,
+      "countable": true,
       "plural": "frozen pizza bases",
       "category": "frozen",
       "eslLabel": "I need a frozen pizza base",
@@ -750,6 +888,9 @@
     "frozen-fries": {
       "emoji": "🍟",
       "label": "frozen fries",
+      "word": "fries",
+      "container": null,
+      "countable": false,
       "plural": "bags of frozen fries",
       "category": "frozen",
       "eslLabel": "I need frozen fries",
@@ -765,6 +906,9 @@
     "frozen-vegetables": {
       "emoji": "🥦",
       "label": "frozen vegetables",
+      "word": "vegetables",
+      "container": null,
+      "countable": false,
       "plural": "bags of frozen vegetables",
       "category": "frozen",
       "eslLabel": "I need frozen vegetables",
@@ -780,6 +924,9 @@
     "pizza-sauce": {
       "emoji": "🍅",
       "label": "jar of pizza sauce",
+      "word": "pizza sauce",
+      "container": "jar",
+      "countable": false,
       "plural": "jars of pizza sauce",
       "category": "pantry",
       "eslLabel": "I need pizza sauce",
@@ -795,6 +942,9 @@
     "mozzarella": {
       "emoji": "🧀",
       "label": "mozzarella cheese",
+      "word": "mozzarella",
+      "container": null,
+      "countable": false,
       "plural": "blocks of mozzarella",
       "category": "dairy",
       "eslLabel": "I need mozzarella",
@@ -810,6 +960,9 @@
     "watermelon": {
       "emoji": "🍉",
       "label": "watermelon",
+      "word": "watermelon",
+      "container": null,
+      "countable": true,
       "plural": "watermelons",
       "category": "veg",
       "eslLabel": "I need a watermelon",
@@ -826,6 +979,9 @@
     "pistachios": {
       "emoji": "🥜",
       "label": "pistachios",
+      "word": "pistachios",
+      "container": null,
+      "countable": false,
       "plural": "bags of pistachios",
       "category": "pantry",
       "eslLabel": "I need pistachios",
@@ -842,6 +998,9 @@
     "feta": {
       "emoji": "🧀",
       "label": "feta cheese",
+      "word": "feta",
+      "container": null,
+      "countable": false,
       "plural": "packs of feta cheese",
       "category": "dairy",
       "eslLabel": "I need feta cheese",
@@ -858,6 +1017,9 @@
     "brown-rice": {
       "emoji": "🍚",
       "label": "brown rice",
+      "word": "brown rice",
+      "container": null,
+      "countable": false,
       "plural": "bags of brown rice",
       "category": "pantry",
       "eslLabel": "I need brown rice",
@@ -874,6 +1036,9 @@
     "steak": {
       "emoji": "🥩",
       "label": "steak",
+      "word": "steak",
+      "container": null,
+      "countable": true,
       "plural": "steaks",
       "category": "pantry",
       "eslLabel": "I need a steak",
@@ -890,6 +1055,9 @@
     "asparagus": {
       "emoji": "🥦",
       "label": "asparagus",
+      "word": "asparagus",
+      "container": null,
+      "countable": false,
       "plural": "bunches of asparagus",
       "category": "veg",
       "eslLabel": "I need asparagus",
@@ -906,6 +1074,9 @@
     "pesto-sauce": {
       "emoji": "🌿",
       "label": "pesto sauce",
+      "word": "pesto sauce",
+      "container": null,
+      "countable": false,
       "plural": "jars of pesto sauce",
       "category": "pantry",
       "eslLabel": "I need pesto sauce",
@@ -922,6 +1093,9 @@
     "olive-oil": {
       "emoji": "🫒",
       "label": "olive oil",
+      "word": "olive oil",
+      "container": null,
+      "countable": false,
       "plural": "bottles of olive oil",
       "category": "pantry",
       "eslLabel": "I need olive oil",
@@ -938,6 +1112,9 @@
     "salmon": {
       "emoji": "🐟",
       "label": "salmon",
+      "word": "salmon",
+      "container": null,
+      "countable": false,
       "plural": "pieces of salmon",
       "category": "pantry",
       "eslLabel": "I need salmon",
@@ -954,6 +1131,9 @@
     "cucumber": {
       "emoji": "🥒",
       "label": "cucumber",
+      "word": "cucumber",
+      "container": null,
+      "countable": true,
       "plural": "cucumbers",
       "category": "veg",
       "eslLabel": "I need a cucumber",
@@ -970,6 +1150,9 @@
     "rice": {
       "emoji": "🍚",
       "label": "rice",
+      "word": "rice",
+      "container": null,
+      "countable": false,
       "plural": "bags of rice",
       "category": "pantry",
       "eslLabel": "I need rice",
@@ -986,6 +1169,9 @@
     "lemon": {
       "emoji": "🍋",
       "label": "lemon",
+      "word": "lemon",
+      "container": null,
+      "countable": true,
       "plural": "lemons",
       "category": "veg",
       "eslLabel": "I need a lemon",
@@ -1002,6 +1188,9 @@
     "tuna": {
       "emoji": "🐟",
       "label": "tuna",
+      "word": "tuna",
+      "container": null,
+      "countable": false,
       "plural": "cans of tuna",
       "category": "pantry",
       "eslLabel": "I need tuna",
@@ -1018,6 +1207,9 @@
     "mayonnaise": {
       "emoji": "🥫",
       "label": "mayonnaise",
+      "word": "mayonnaise",
+      "container": null,
+      "countable": false,
       "plural": "jars of mayonnaise",
       "category": "pantry",
       "eslLabel": "I need mayonnaise",
@@ -1034,6 +1226,9 @@
     "cabbage": {
       "emoji": "🥬",
       "label": "cabbage",
+      "word": "cabbage",
+      "container": null,
+      "countable": true,
       "plural": "cabbages",
       "category": "veg",
       "eslLabel": "I need a cabbage",
@@ -1050,6 +1245,9 @@
     "cream-cheese": {
       "emoji": "🧀",
       "label": "cream cheese",
+      "word": "cream cheese",
+      "container": null,
+      "countable": false,
       "plural": "packs of cream cheese",
       "category": "dairy",
       "eslLabel": "I need cream cheese",

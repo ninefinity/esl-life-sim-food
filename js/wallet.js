@@ -107,20 +107,30 @@ const WordWallet = {
     this.seedInitialWallet();
   },
 
-  pickRandomDenom() {
-    return MONEY_DENOMS[randInt(0, MONEY_DENOMS.length - 1)];
+  pickRandomDenom(maxCents = Infinity) {
+    const usable = MONEY_DENOMS.filter((d) => d.cents <= maxCents);
+    if (!usable.length) return null;
+    return usable[randInt(0, usable.length - 1)];
   },
 
-  /** Add random notes/coins so totals can be made in many ways. */
+  /**
+   * Add random notes/coins totalling exactly `targetExtraCents`, so totals can
+   * still be made in many ways. Never overshoots: each pick is drawn only from
+   * denominations that still fit in the remainder, and the 1¢ coin guarantees
+   * any integer amount is reachable. Overshooting would make the payout the
+   * game announces differ from the money it actually hands over.
+   */
   addRandomFunds(wallet, targetExtraCents) {
     if (!this.isWalletObject(wallet) || targetExtraCents <= 0) return;
-    let added = 0;
-    let guard = 0;
-    while (added < targetExtraCents && guard < 300) {
-      guard += 1;
-      const denom = this.pickRandomDenom();
+    let remaining = Math.floor(targetExtraCents);
+    // Every pick removes at least 1¢, so this bound can never be reached.
+    let guard = remaining + 10;
+    while (remaining > 0 && guard > 0) {
+      guard -= 1;
+      const denom = this.pickRandomDenom(remaining);
+      if (!denom) break;
       wallet[denom.id] = (wallet[denom.id] || 0) + 1;
-      added += denom.cents;
+      remaining -= denom.cents;
     }
   },
 

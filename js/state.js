@@ -89,8 +89,14 @@ const GameState = {
     window.dispatchEvent(new CustomEvent('stagechange', { detail: { stage: n } }));
   },
 
-  setShoppingPhase(phase) {
+  /**
+   * `silent` updates the field without re-rendering — for when the view has
+   * already moved on and a resync would clobber it (e.g. the post-checkout
+   * panel, where a resume would rebuild the shelf underneath it).
+   */
+  setShoppingPhase(phase, { silent = false } = {}) {
     this.shoppingPhase = phase;
+    if (silent) return;
     window.dispatchEvent(new CustomEvent('shoppingphasechange', { detail: { phase } }));
   },
 

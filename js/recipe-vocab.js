@@ -12,7 +12,9 @@ const RecipeVocab = {
       const ids = RecipeShopping.getAcceptedIds(req);
       ids.forEach((id) => {
         const item = DataItems.getItem(id);
-        const word = (item?.label || id).split(' ').pop();
+        // `label` is a shopping string ("jar of peanut butter"); `word` is the
+        // lexical item the learner is actually being taught.
+        const word = item?.word || item?.label || id;
         const key = word.toLowerCase();
         if (seen.has(key)) return;
         seen.add(key);
