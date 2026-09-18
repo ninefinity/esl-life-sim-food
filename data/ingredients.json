@@ -1,0 +1,1067 @@
+{
+  "items": {
+    "green-apple": {
+      "emoji": "🍏",
+      "label": "green apple",
+      "plural": "green apples",
+      "category": "veg",
+      "eslLabel": "I need a green apple",
+      "definition": "A crisp green fruit.",
+      "price": {
+        "wd": 0,
+        "c": 85
+      },
+      "storeIds": [
+        "farmers-market"
+      ]
+    },
+    "red-apple": {
+      "emoji": "🍎",
+      "label": "red apple",
+      "plural": "red apples",
+      "category": "veg",
+      "eslLabel": "I need a red apple",
+      "definition": "A sweet red fruit.",
+      "price": {
+        "wd": 0,
+        "c": 80
+      },
+      "storeIds": [
+        "farmers-market"
+      ]
+    },
+    "banana": {
+      "emoji": "🍌",
+      "label": "banana",
+      "plural": "bananas",
+      "category": "veg",
+      "eslLabel": "I need a banana",
+      "definition": "A long yellow fruit.",
+      "price": {
+        "wd": 0,
+        "c": 35
+      },
+      "storeIds": [
+        "farmers-market",
+        "supermarket"
+      ]
+    },
+    "orange": {
+      "emoji": "🍊",
+      "label": "orange",
+      "plural": "oranges",
+      "category": "veg",
+      "eslLabel": "I need an orange",
+      "definition": "A round citrus fruit.",
+      "price": {
+        "wd": 0,
+        "c": 55
+      },
+      "storeIds": [
+        "farmers-market",
+        "supermarket"
+      ]
+    },
+    "grapes": {
+      "emoji": "🍇",
+      "label": "grapes",
+      "category": "veg",
+      "eslLabel": "I need grapes",
+      "definition": "Small purple or green fruits in a bunch.",
+      "price": {
+        "wd": 2,
+        "c": 20
+      },
+      "storeIds": [
+        "farmers-market",
+        "supermarket"
+      ]
+    },
+    "tomato": {
+      "emoji": "🍅",
+      "label": "tomato",
+      "plural": "tomatoes",
+      "category": "veg",
+      "eslLabel": "I need a tomato",
+      "definition": "A red vegetable used in salads.",
+      "price": {
+        "wd": 0,
+        "c": 40
+      },
+      "storeIds": [
+        "farmers-market",
+        "supermarket"
+      ]
+    },
+    "carrot": {
+      "emoji": "🥕",
+      "label": "carrot",
+      "plural": "carrots",
+      "category": "veg",
+      "eslLabel": "I need a carrot",
+      "definition": "An orange root vegetable.",
+      "price": {
+        "wd": 0,
+        "c": 30
+      },
+      "storeIds": [
+        "farmers-market",
+        "supermarket"
+      ]
+    },
+    "lettuce": {
+      "emoji": "🥬",
+      "label": "head of lettuce",
+      "plural": "heads of lettuce",
+      "category": "veg",
+      "eslLabel": "I need lettuce",
+      "definition": "Green leafy vegetable for salads.",
+      "price": {
+        "wd": 1,
+        "c": 60
+      },
+      "storeIds": [
+        "farmers-market",
+        "supermarket"
+      ]
+    },
+    "milk": {
+      "emoji": "🥛",
+      "label": "bottle of milk",
+      "plural": "bottles of milk",
+      "category": "dairy",
+      "eslLabel": "I need milk",
+      "definition": "White drink from cows.",
+      "price": {
+        "wd": 1,
+        "c": 25
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "cheese": {
+      "emoji": "🧀",
+      "label": "block of cheese",
+      "plural": "blocks of cheese",
+      "category": "dairy",
+      "eslLabel": "I need cheese",
+      "definition": "A solid dairy food.",
+      "price": {
+        "wd": 3,
+        "c": 50
+      },
+      "storeIds": [
+        "supermarket",
+        "department-store",
+        "delicacies"
+      ]
+    },
+    "yogurt": {
+      "emoji": "🥛",
+      "label": "pot of yogurt",
+      "plural": "pots of yogurt",
+      "category": "dairy",
+      "eslLabel": "I need yogurt",
+      "definition": "Thick creamy dairy snack.",
+      "price": {
+        "wd": 1,
+        "c": 15
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "butter": {
+      "emoji": "🧈",
+      "label": "block of butter",
+      "plural": "blocks of butter",
+      "category": "dairy",
+      "eslLabel": "I need butter",
+      "definition": "Yellow spread made from cream.",
+      "price": {
+        "wd": 2,
+        "c": 10
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "eggs": {
+      "emoji": "🥚",
+      "label": "egg",
+      "plural": "eggs",
+      "category": "dairy",
+      "eslLabel": "I need eggs",
+      "definition": "An oval food from chickens.",
+      "price": {
+        "wd": 0,
+        "c": 25
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "bread": {
+      "emoji": "🍞",
+      "label": "loaf of bread",
+      "plural": "loaves of bread",
+      "category": "bakery",
+      "eslLabel": "I need bread",
+      "definition": "Baked food made from flour.",
+      "price": {
+        "wd": 1,
+        "c": 20
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket",
+        "department-store",
+        "bakery"
+      ]
+    },
+    "croissant": {
+      "emoji": "🥐",
+      "label": "croissant",
+      "plural": "croissants",
+      "category": "bakery",
+      "eslLabel": "I need a croissant",
+      "definition": "A flaky crescent-shaped pastry.",
+      "price": {
+        "wd": 1,
+        "c": 10
+      },
+      "storeIds": [
+        "bakery",
+        "department-store",
+        "delicacies"
+      ]
+    },
+    "bagel": {
+      "emoji": "🥯",
+      "label": "bagel",
+      "plural": "bagels",
+      "category": "bakery",
+      "eslLabel": "I need a bagel",
+      "definition": "A round bread with a hole.",
+      "price": {
+        "wd": 0,
+        "c": 95
+      },
+      "storeIds": [
+        "bakery",
+        "department-store"
+      ]
+    },
+    "muffin": {
+      "emoji": "🧁",
+      "label": "muffin",
+      "plural": "muffins",
+      "category": "bakery",
+      "eslLabel": "I need a muffin",
+      "definition": "A small sweet baked cake.",
+      "price": {
+        "wd": 1,
+        "c": 35
+      },
+      "storeIds": [
+        "bakery",
+        "department-store",
+        "delicacies"
+      ]
+    },
+    "peanut-butter": {
+      "emoji": "🥜",
+      "label": "jar of peanut butter",
+      "plural": "jars of peanut butter",
+      "category": "pantry",
+      "eslLabel": "I need peanut butter",
+      "definition": "A spread made from peanuts.",
+      "price": {
+        "wd": 2,
+        "c": 50
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "jelly": {
+      "emoji": "🍇",
+      "label": "jar of jelly",
+      "plural": "jars of jelly",
+      "category": "pantry",
+      "eslLabel": "I need jelly",
+      "definition": "Sweet fruit spread for sandwiches.",
+      "price": {
+        "wd": 1,
+        "c": 75
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "oats": {
+      "emoji": "🥣",
+      "label": "box of oats",
+      "plural": "boxes of oats",
+      "category": "pantry",
+      "eslLabel": "I need oats",
+      "definition": "Grain used to make oatmeal.",
+      "price": {
+        "wd": 1,
+        "c": 90
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "cereal": {
+      "emoji": "🥣",
+      "label": "box of cereal",
+      "plural": "boxes of cereal",
+      "category": "pantry",
+      "eslLabel": "I need cereal",
+      "definition": "Breakfast food eaten with milk.",
+      "price": {
+        "wd": 2,
+        "c": 80
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "chips": {
+      "emoji": "🍟",
+      "label": "bag of chips",
+      "plural": "bags of chips",
+      "category": "sweets",
+      "eslLabel": "I need chips",
+      "definition": "Thin crispy salty snacks.",
+      "price": {
+        "wd": 1,
+        "c": 45
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "cookie": {
+      "emoji": "🍪",
+      "label": "cookie",
+      "plural": "cookies",
+      "category": "sweets",
+      "eslLabel": "I need a cookie",
+      "definition": "A small sweet baked treat.",
+      "price": {
+        "wd": 0,
+        "c": 45
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "chocolate": {
+      "emoji": "🍫",
+      "label": "bar of chocolate",
+      "plural": "bars of chocolate",
+      "category": "sweets",
+      "eslLabel": "I need chocolate",
+      "definition": "Sweet brown candy.",
+      "price": {
+        "wd": 1,
+        "c": 75
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket",
+        "delicacies"
+      ]
+    },
+    "popcorn": {
+      "emoji": "🍿",
+      "label": "bag of popcorn",
+      "plural": "bags of popcorn",
+      "category": "sweets",
+      "eslLabel": "I need popcorn",
+      "definition": "Puffed corn kernels as a snack.",
+      "price": {
+        "wd": 1,
+        "c": 30
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "juice": {
+      "emoji": "🧃",
+      "label": "carton of juice",
+      "plural": "cartons of juice",
+      "category": "pantry",
+      "eslLabel": "I need juice",
+      "definition": "Sweet drink from fruit.",
+      "price": {
+        "wd": 2,
+        "c": 50
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "water": {
+      "emoji": "💧",
+      "label": "bottle of water",
+      "plural": "bottles of water",
+      "category": "pantry",
+      "eslLabel": "I need water",
+      "definition": "Clear drink with no flavor.",
+      "price": {
+        "wd": 0,
+        "c": 65
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "bowl": {
+      "emoji": "🥣",
+      "label": "bowl",
+      "plural": "bowls",
+      "category": "pantry",
+      "eslLabel": "I need a bowl",
+      "definition": "A round dish used for cereal or soup.",
+      "price": {
+        "wd": 1,
+        "c": 50
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket",
+        "department-store"
+      ]
+    },
+    "honey": {
+      "emoji": "🍯",
+      "label": "jar of honey",
+      "plural": "jars of honey",
+      "category": "pantry",
+      "eslLabel": "I need honey",
+      "definition": "Sweet sticky food made by bees.",
+      "price": {
+        "wd": 2,
+        "c": 25
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket",
+        "delicacies"
+      ]
+    },
+    "salt": {
+      "emoji": "🧂",
+      "label": "salt",
+      "category": "pantry",
+      "eslLabel": "I need salt",
+      "definition": "White crystals used to season food.",
+      "price": {
+        "wd": 0,
+        "c": 40
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "pepper": {
+      "emoji": "🌶️",
+      "label": "pepper",
+      "category": "pantry",
+      "eslLabel": "I need pepper",
+      "definition": "A spice that adds a sharp taste.",
+      "price": {
+        "wd": 0,
+        "c": 55
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "onion": {
+      "emoji": "🧅",
+      "label": "onion",
+      "plural": "onions",
+      "category": "veg",
+      "eslLabel": "I need an onion",
+      "definition": "A round vegetable with layers.",
+      "price": {
+        "wd": 0,
+        "c": 35
+      },
+      "storeIds": [
+        "farmers-market",
+        "supermarket"
+      ]
+    },
+    "potato": {
+      "emoji": "🥔",
+      "label": "potato",
+      "plural": "potatoes",
+      "category": "veg",
+      "eslLabel": "I need a potato",
+      "definition": "A starchy root vegetable.",
+      "price": {
+        "wd": 0,
+        "c": 45
+      },
+      "storeIds": [
+        "farmers-market",
+        "supermarket"
+      ]
+    },
+    "broth": {
+      "emoji": "🥫",
+      "label": "carton of broth",
+      "plural": "cartons of broth",
+      "category": "pantry",
+      "eslLabel": "I need broth",
+      "definition": "Liquid used as a base for soup.",
+      "price": {
+        "wd": 1,
+        "c": 80
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "pasta": {
+      "emoji": "🍝",
+      "label": "box of pasta",
+      "plural": "boxes of pasta",
+      "category": "pantry",
+      "eslLabel": "I need pasta",
+      "definition": "Dried noodles made from flour.",
+      "price": {
+        "wd": 1,
+        "c": 40
+      },
+      "storeIds": [
+        "supermarket",
+        "department-store"
+      ]
+    },
+    "tomato-sauce": {
+      "emoji": "🍅",
+      "label": "jar of tomato sauce",
+      "plural": "jars of tomato sauce",
+      "category": "pantry",
+      "eslLabel": "I need tomato sauce",
+      "definition": "Red sauce made from tomatoes.",
+      "price": {
+        "wd": 2,
+        "c": 10
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket",
+        "department-store"
+      ]
+    },
+    "garlic": {
+      "emoji": "🧄",
+      "label": "garlic",
+      "category": "veg",
+      "eslLabel": "I need garlic",
+      "definition": "A strong-smelling bulb used for flavor.",
+      "price": {
+        "wd": 0,
+        "c": 50
+      },
+      "storeIds": [
+        "farmers-market",
+        "supermarket",
+        "delicacies"
+      ]
+    },
+    "apple": {
+      "emoji": "🍎",
+      "label": "apple",
+      "plural": "apples",
+      "category": "veg",
+      "eslLabel": "I need an apple",
+      "definition": "A round sweet fruit.",
+      "price": {
+        "wd": 0,
+        "c": 75
+      },
+      "storeIds": [
+        "farmers-market",
+        "supermarket"
+      ]
+    },
+    "flour": {
+      "emoji": "🌾",
+      "label": "bag of flour",
+      "plural": "bags of flour",
+      "category": "bakery",
+      "eslLabel": "I need flour",
+      "definition": "White powder used for baking.",
+      "price": {
+        "wd": 1,
+        "c": 60
+      },
+      "storeIds": [
+        "supermarket",
+        "bakery",
+        "department-store"
+      ]
+    },
+    "sugar": {
+      "emoji": "🍬",
+      "label": "bag of sugar",
+      "plural": "bags of sugar",
+      "category": "sweets",
+      "eslLabel": "I need sugar",
+      "definition": "Sweet white crystals used in baking.",
+      "price": {
+        "wd": 1,
+        "c": 30
+      },
+      "storeIds": [
+        "supermarket",
+        "bakery",
+        "department-store"
+      ]
+    },
+    "chocolate-chips": {
+      "emoji": "🍫",
+      "label": "bag of chocolate chips",
+      "plural": "bags of chocolate chips",
+      "category": "sweets",
+      "eslLabel": "I need chocolate chips",
+      "definition": "Small pieces of chocolate for cookies.",
+      "price": {
+        "wd": 2,
+        "c": 40
+      },
+      "storeIds": [
+        "supermarket",
+        "bakery",
+        "department-store"
+      ]
+    },
+    "corn-fresh": {
+      "emoji": "🌽",
+      "label": "fresh corn",
+      "plural": "ears of fresh corn",
+      "category": "veg",
+      "group": "corn",
+      "variant": "fresh",
+      "eslLabel": "I need fresh corn",
+      "definition": "Sweet corn from the farm.",
+      "price": {
+        "wd": 0,
+        "c": 60
+      },
+      "storeIds": [
+        "farmers-market"
+      ]
+    },
+    "corn-on-the-cob": {
+      "emoji": "🌽",
+      "label": "corn on the cob",
+      "plural": "ears of corn on the cob",
+      "category": "veg",
+      "group": "corn",
+      "variant": "on-the-cob",
+      "eslLabel": "I need corn on the cob",
+      "definition": "Fresh corn still on the cob.",
+      "price": {
+        "wd": 1,
+        "c": 0
+      },
+      "storeIds": [
+        "farmers-market"
+      ]
+    },
+    "corn-canned": {
+      "emoji": "🌽",
+      "label": "can of corn",
+      "plural": "cans of corn",
+      "category": "pantry",
+      "group": "corn",
+      "variant": "canned",
+      "eslLabel": "I need canned corn",
+      "definition": "Corn kernels in a can.",
+      "price": {
+        "wd": 0,
+        "c": 85
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "corn-frozen": {
+      "emoji": "🌽",
+      "label": "frozen corn",
+      "plural": "bags of frozen corn",
+      "category": "frozen",
+      "group": "corn",
+      "variant": "frozen",
+      "eslLabel": "I need frozen corn",
+      "definition": "Corn kernels kept in the freezer.",
+      "price": {
+        "wd": 1,
+        "c": 20
+      },
+      "storeIds": [
+        "frozen-goods"
+      ]
+    },
+    "frozen-pizza-base": {
+      "emoji": "🍕",
+      "label": "frozen pizza base",
+      "plural": "frozen pizza bases",
+      "category": "frozen",
+      "eslLabel": "I need a frozen pizza base",
+      "definition": "A ready-made pizza crust from the freezer.",
+      "price": {
+        "wd": 2,
+        "c": 50
+      },
+      "storeIds": [
+        "frozen-goods"
+      ]
+    },
+    "frozen-fries": {
+      "emoji": "🍟",
+      "label": "frozen fries",
+      "plural": "bags of frozen fries",
+      "category": "frozen",
+      "eslLabel": "I need frozen fries",
+      "definition": "Potato fries from the freezer.",
+      "price": {
+        "wd": 1,
+        "c": 80
+      },
+      "storeIds": [
+        "frozen-goods"
+      ]
+    },
+    "frozen-vegetables": {
+      "emoji": "🥦",
+      "label": "frozen vegetables",
+      "plural": "bags of frozen vegetables",
+      "category": "frozen",
+      "eslLabel": "I need frozen vegetables",
+      "definition": "Mixed vegetables from the freezer.",
+      "price": {
+        "wd": 1,
+        "c": 50
+      },
+      "storeIds": [
+        "frozen-goods"
+      ]
+    },
+    "pizza-sauce": {
+      "emoji": "🍅",
+      "label": "jar of pizza sauce",
+      "plural": "jars of pizza sauce",
+      "category": "pantry",
+      "eslLabel": "I need pizza sauce",
+      "definition": "Thick tomato sauce for pizza.",
+      "price": {
+        "wd": 1,
+        "c": 40
+      },
+      "storeIds": [
+        "supermarket"
+      ]
+    },
+    "mozzarella": {
+      "emoji": "🧀",
+      "label": "mozzarella cheese",
+      "plural": "blocks of mozzarella",
+      "category": "dairy",
+      "eslLabel": "I need mozzarella",
+      "definition": "Soft white cheese for pizza.",
+      "price": {
+        "wd": 2,
+        "c": 30
+      },
+      "storeIds": [
+        "supermarket"
+      ]
+    },
+    "watermelon": {
+      "emoji": "🍉",
+      "label": "watermelon",
+      "plural": "watermelons",
+      "category": "veg",
+      "eslLabel": "I need a watermelon",
+      "definition": "A large sweet fruit with red flesh.",
+      "price": {
+        "wd": 3,
+        "c": 0
+      },
+      "storeIds": [
+        "supermarket",
+        "farmers-market"
+      ]
+    },
+    "pistachios": {
+      "emoji": "🥜",
+      "label": "pistachios",
+      "plural": "bags of pistachios",
+      "category": "pantry",
+      "eslLabel": "I need pistachios",
+      "definition": "Small crunchy green nuts.",
+      "price": {
+        "wd": 2,
+        "c": 50
+      },
+      "storeIds": [
+        "farmers-market",
+        "supermarket"
+      ]
+    },
+    "feta": {
+      "emoji": "🧀",
+      "label": "feta cheese",
+      "plural": "packs of feta cheese",
+      "category": "dairy",
+      "eslLabel": "I need feta cheese",
+      "definition": "A salty white cheese.",
+      "price": {
+        "wd": 3,
+        "c": 20
+      },
+      "storeIds": [
+        "supermarket",
+        "farmers-market"
+      ]
+    },
+    "brown-rice": {
+      "emoji": "🍚",
+      "label": "brown rice",
+      "plural": "bags of brown rice",
+      "category": "pantry",
+      "eslLabel": "I need brown rice",
+      "definition": "Whole grain rice with a chewy texture.",
+      "price": {
+        "wd": 2,
+        "c": 20
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "steak": {
+      "emoji": "🥩",
+      "label": "steak",
+      "plural": "steaks",
+      "category": "pantry",
+      "eslLabel": "I need a steak",
+      "definition": "A thick slice of beef for frying or grilling.",
+      "price": {
+        "wd": 5,
+        "c": 0
+      },
+      "storeIds": [
+        "supermarket",
+        "farmers-market"
+      ]
+    },
+    "asparagus": {
+      "emoji": "🥦",
+      "label": "asparagus",
+      "plural": "bunches of asparagus",
+      "category": "veg",
+      "eslLabel": "I need asparagus",
+      "definition": "Long green vegetable spears.",
+      "price": {
+        "wd": 3,
+        "c": 0
+      },
+      "storeIds": [
+        "supermarket",
+        "farmers-market"
+      ]
+    },
+    "pesto-sauce": {
+      "emoji": "🌿",
+      "label": "pesto sauce",
+      "plural": "jars of pesto sauce",
+      "category": "pantry",
+      "eslLabel": "I need pesto sauce",
+      "definition": "A green sauce made with basil, nuts, and cheese.",
+      "price": {
+        "wd": 3,
+        "c": 0
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "olive-oil": {
+      "emoji": "🫒",
+      "label": "olive oil",
+      "plural": "bottles of olive oil",
+      "category": "pantry",
+      "eslLabel": "I need olive oil",
+      "definition": "Oil from olives for cooking and salads.",
+      "price": {
+        "wd": 2,
+        "c": 80
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "salmon": {
+      "emoji": "🐟",
+      "label": "salmon",
+      "plural": "pieces of salmon",
+      "category": "pantry",
+      "eslLabel": "I need salmon",
+      "definition": "Pink fish often eaten fresh or cooked.",
+      "price": {
+        "wd": 4,
+        "c": 50
+      },
+      "storeIds": [
+        "supermarket",
+        "farmers-market"
+      ]
+    },
+    "cucumber": {
+      "emoji": "🥒",
+      "label": "cucumber",
+      "plural": "cucumbers",
+      "category": "veg",
+      "eslLabel": "I need a cucumber",
+      "definition": "Long green vegetable with soft flesh.",
+      "price": {
+        "wd": 1,
+        "c": 20
+      },
+      "storeIds": [
+        "supermarket",
+        "farmers-market"
+      ]
+    },
+    "rice": {
+      "emoji": "🍚",
+      "label": "rice",
+      "plural": "bags of rice",
+      "category": "pantry",
+      "eslLabel": "I need rice",
+      "definition": "Small white or brown grains for boiling.",
+      "price": {
+        "wd": 2,
+        "c": 0
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "lemon": {
+      "emoji": "🍋",
+      "label": "lemon",
+      "plural": "lemons",
+      "category": "veg",
+      "eslLabel": "I need a lemon",
+      "definition": "A yellow sour fruit.",
+      "price": {
+        "wd": 1,
+        "c": 0
+      },
+      "storeIds": [
+        "supermarket",
+        "farmers-market"
+      ]
+    },
+    "tuna": {
+      "emoji": "🐟",
+      "label": "tuna",
+      "plural": "cans of tuna",
+      "category": "pantry",
+      "eslLabel": "I need tuna",
+      "definition": "Fish usually sold in cans for sandwiches.",
+      "price": {
+        "wd": 2,
+        "c": 0
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "mayonnaise": {
+      "emoji": "🥫",
+      "label": "mayonnaise",
+      "plural": "jars of mayonnaise",
+      "category": "pantry",
+      "eslLabel": "I need mayonnaise",
+      "definition": "A creamy white sauce for salads and sandwiches.",
+      "price": {
+        "wd": 2,
+        "c": 30
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    },
+    "cabbage": {
+      "emoji": "🥬",
+      "label": "cabbage",
+      "plural": "cabbages",
+      "category": "veg",
+      "eslLabel": "I need a cabbage",
+      "definition": "A round leafy vegetable.",
+      "price": {
+        "wd": 1,
+        "c": 50
+      },
+      "storeIds": [
+        "supermarket",
+        "farmers-market"
+      ]
+    },
+    "cream-cheese": {
+      "emoji": "🧀",
+      "label": "cream cheese",
+      "plural": "packs of cream cheese",
+      "category": "dairy",
+      "eslLabel": "I need cream cheese",
+      "definition": "A soft white cheese for spreading.",
+      "price": {
+        "wd": 2,
+        "c": 40
+      },
+      "storeIds": [
+        "corner-shop",
+        "supermarket"
+      ]
+    }
+  }
+}

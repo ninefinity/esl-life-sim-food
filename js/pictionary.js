@@ -1,7 +1,5 @@
 'use strict';
 
-const { escapeHtml } = window.GameUtils;
-
 const Pictionary = {
   init() {
     this.modal = document.getElementById('pictionary-modal');

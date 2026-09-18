@@ -4,11 +4,38 @@
       "category": "snack",
       "difficulty": 1,
       "label": "Peanut Butter Jelly Sandwich",
-      "ingredients": ["bread", "peanut-butter", "jelly"],
+      "ingredients": [
+        "bread",
+        "peanut-butter",
+        "jelly"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "2 slices of bread",
+          "itemId": "bread"
+        },
+        {
+          "text": "peanut butter",
+          "itemId": "peanut-butter"
+        },
+        {
+          "text": "jelly",
+          "itemId": "jelly"
+        }
+      ],
       "recipeSteps": [
-        { "verb": "spread", "text": "Spread the peanut butter on the bread." },
-        { "verb": "spread", "text": "Spread the jelly on the other slice." },
-        { "verb": "put", "text": "Put the slices together." }
+        {
+          "verb": "spread",
+          "text": "Spread the peanut butter on the bread."
+        },
+        {
+          "verb": "spread",
+          "text": "Spread the jelly on the other slice."
+        },
+        {
+          "verb": "put",
+          "text": "Put the slices together."
+        }
       ],
       "image": "pbj.png"
     },
@@ -16,35 +43,1411 @@
       "category": "breakfast",
       "difficulty": 1,
       "label": "Oatmeal",
-      "ingredients": ["oats", "milk", "butter"],
-      "recipeSteps": [
-        { "verb": "pour", "text": "Pour the milk into a pot." },
-        { "verb": "add", "text": "Add the oats to the pot." },
-        { "verb": "stir", "text": "Stir until the oatmeal is thick." }
+      "ingredients": [
+        "oats",
+        "milk",
+        "butter"
       ],
-      "image": "oatmeal.png"
+      "ingredientRequirements": [
+        {
+          "text": "a box of oats",
+          "itemId": "oats"
+        },
+        {
+          "text": "a bottle of milk",
+          "itemId": "milk"
+        },
+        {
+          "text": "butter",
+          "itemId": "butter"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "pour",
+          "text": "Pour the milk into a pot."
+        },
+        {
+          "verb": "add",
+          "text": "Add the oats to the pot."
+        },
+        {
+          "verb": "stir",
+          "text": "Stir until the oatmeal is thick."
+        }
+      ],
+      "image": "assets/images/breakfast/oats.jpg"
     },
     "garden_salad": {
       "category": "lunch",
       "difficulty": 1,
       "label": "Garden Salad",
-      "ingredients": ["lettuce", "tomato", "carrot"],
+      "ingredients": [
+        "lettuce",
+        "tomato",
+        "carrot"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "a head of lettuce",
+          "itemId": "lettuce"
+        },
+        {
+          "text": "a tomato",
+          "itemId": "tomato"
+        },
+        {
+          "text": "a carrot",
+          "itemId": "carrot"
+        }
+      ],
       "recipeSteps": [
-        { "verb": "wash", "text": "Wash the lettuce and vegetables." },
-        { "verb": "chop", "text": "Chop the tomato and carrot." },
-        { "verb": "mix", "text": "Mix everything in a bowl." }
+        {
+          "verb": "wash",
+          "text": "Wash the lettuce and vegetables."
+        },
+        {
+          "verb": "chop",
+          "text": "Chop the tomato and carrot."
+        },
+        {
+          "verb": "mix",
+          "text": "Mix everything in a bowl."
+        }
       ],
       "image": "salad.png"
+    },
+    "cereal_and_milk": {
+      "category": "breakfast",
+      "difficulty": 1,
+      "label": "Cereal & Milk",
+      "ingredients": [
+        "cereal",
+        "milk",
+        "bowl"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "a box of cereal",
+          "itemId": "cereal"
+        },
+        {
+          "text": "a bottle of milk",
+          "itemId": "milk"
+        },
+        {
+          "text": "a bowl",
+          "itemId": "bowl"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "pour",
+          "text": "Pour the cereal into the bowl."
+        },
+        {
+          "verb": "pour",
+          "text": "Pour the milk over the cereal."
+        }
+      ],
+      "image": "assets/images/breakfast/cereal.jpg"
+    },
+    "grilled_cheese": {
+      "category": "snack",
+      "difficulty": 2,
+      "label": "Grilled Cheese",
+      "ingredients": [
+        "bread",
+        "cheese",
+        "butter"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "2 slices of bread",
+          "itemId": "bread"
+        },
+        {
+          "text": "cheese",
+          "itemId": "cheese"
+        },
+        {
+          "text": "butter",
+          "itemId": "butter"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "spread",
+          "text": "Spread the butter on the bread."
+        },
+        {
+          "verb": "put",
+          "text": "Put the cheese between the slices."
+        },
+        {
+          "verb": "fry",
+          "text": "Fry the sandwich until golden."
+        },
+        {
+          "verb": "flip",
+          "text": "Flip the sandwich."
+        }
+      ],
+      "image": "grilled-cheese.png"
+    },
+    "fruit_smoothie": {
+      "category": "snack",
+      "difficulty": 2,
+      "label": "Fruit Smoothie",
+      "ingredients": [
+        "banana",
+        "yogurt",
+        "milk",
+        "honey"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "a banana",
+          "itemId": "banana"
+        },
+        {
+          "text": "yogurt",
+          "itemId": "yogurt"
+        },
+        {
+          "text": "a bottle of milk",
+          "itemId": "milk"
+        },
+        {
+          "text": "honey",
+          "itemId": "honey"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "peel",
+          "text": "Peel the banana."
+        },
+        {
+          "verb": "blend",
+          "text": "Blend the banana, yogurt, and milk."
+        },
+        {
+          "verb": "pour",
+          "text": "Pour the smoothie into a glass."
+        }
+      ],
+      "image": "fruit-smoothie.png"
+    },
+    "scrambled_eggs": {
+      "category": "breakfast",
+      "difficulty": 2,
+      "label": "Scrambled Eggs",
+      "ingredients": [
+        "eggs",
+        "butter",
+        "salt",
+        "pepper"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "eggs",
+          "itemId": "eggs"
+        },
+        {
+          "text": "butter",
+          "itemId": "butter"
+        },
+        {
+          "text": "salt",
+          "itemId": "salt"
+        },
+        {
+          "text": "pepper",
+          "itemId": "pepper"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "crack",
+          "text": "Crack the eggs into a bowl."
+        },
+        {
+          "verb": "whisk",
+          "text": "Whisk the eggs."
+        },
+        {
+          "verb": "fry",
+          "text": "Fry the eggs in butter."
+        },
+        {
+          "verb": "season",
+          "text": "Season with salt and pepper."
+        }
+      ],
+      "image": "assets/images/breakfast/scrambled-eggs.jpg"
+    },
+    "veggie_soup": {
+      "category": "dinner",
+      "difficulty": 2,
+      "label": "Veggie Soup",
+      "ingredients": [
+        "onion",
+        "carrot",
+        "potato",
+        "broth"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "an onion",
+          "itemId": "onion"
+        },
+        {
+          "text": "a carrot",
+          "itemId": "carrot"
+        },
+        {
+          "text": "a potato",
+          "itemId": "potato"
+        },
+        {
+          "text": "broth",
+          "itemId": "broth"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "chop",
+          "text": "Chop the onion, carrot, and potato."
+        },
+        {
+          "verb": "boil",
+          "text": "Boil the vegetables in broth."
+        },
+        {
+          "verb": "simmer",
+          "text": "Simmer until soft."
+        }
+      ],
+      "image": "veggie-soup.png"
+    },
+    "spaghetti_with_sauce": {
+      "category": "dinner",
+      "difficulty": 3,
+      "label": "Spaghetti with Sauce",
+      "ingredients": [
+        "pasta",
+        "tomato-sauce",
+        "garlic",
+        "cheese"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "a box of pasta",
+          "itemId": "pasta"
+        },
+        {
+          "text": "tomato sauce",
+          "itemId": "tomato-sauce"
+        },
+        {
+          "text": "garlic",
+          "itemId": "garlic"
+        },
+        {
+          "text": "cheese",
+          "itemId": "cheese"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "boil",
+          "text": "Boil the pasta."
+        },
+        {
+          "verb": "drain",
+          "text": "Drain the pasta."
+        },
+        {
+          "verb": "simmer",
+          "text": "Simmer the sauce with garlic."
+        },
+        {
+          "verb": "sprinkle",
+          "text": "Sprinkle cheese on top."
+        }
+      ],
+      "image": "spaghetti.png"
+    },
+    "fruit_salad": {
+      "category": "dessert",
+      "difficulty": 1,
+      "label": "Fruit Salad",
+      "ingredients": [
+        "apple",
+        "banana",
+        "orange",
+        "grapes"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "an apple",
+          "itemId": "apple"
+        },
+        {
+          "text": "a banana",
+          "itemId": "banana"
+        },
+        {
+          "text": "an orange",
+          "itemId": "orange"
+        },
+        {
+          "text": "grapes",
+          "itemId": "grapes"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "peel",
+          "text": "Peel the orange."
+        },
+        {
+          "verb": "slice",
+          "text": "Slice the apple and banana."
+        },
+        {
+          "verb": "mix",
+          "text": "Mix all the fruit together."
+        }
+      ],
+      "image": "fruit-salad.png"
+    },
+    "chocolate_chip_cookies": {
+      "category": "dessert",
+      "difficulty": 4,
+      "label": "Chocolate Chip Cookies",
+      "ingredients": [
+        "flour",
+        "sugar",
+        "butter",
+        "eggs",
+        "chocolate-chips"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "flour",
+          "itemId": "flour"
+        },
+        {
+          "text": "sugar",
+          "itemId": "sugar"
+        },
+        {
+          "text": "butter",
+          "itemId": "butter"
+        },
+        {
+          "text": "eggs",
+          "itemId": "eggs"
+        },
+        {
+          "text": "chocolate chips",
+          "itemId": "chocolate-chips"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "mix",
+          "text": "Mix the flour, sugar, and butter."
+        },
+        {
+          "verb": "add",
+          "text": "Add the eggs and chocolate chips."
+        },
+        {
+          "verb": "scoop",
+          "text": "Scoop the dough onto a tray."
+        },
+        {
+          "verb": "bake",
+          "text": "Bake until golden."
+        },
+        {
+          "verb": "cool",
+          "text": "Cool the cookies on a rack."
+        }
+      ],
+      "image": "chocolate-chip-cookies.png"
+    },
+    "corn_chowder": {
+      "category": "dinner",
+      "difficulty": 3,
+      "label": "Corn Chowder",
+      "ingredients": [
+        "corn",
+        "potato",
+        "onion",
+        "milk",
+        "butter"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "200 g of corn",
+          "group": "corn",
+          "acceptsAnyOf": [
+            "corn-fresh",
+            "corn-canned",
+            "corn-frozen"
+          ]
+        },
+        {
+          "text": "a potato",
+          "itemId": "potato"
+        },
+        {
+          "text": "an onion",
+          "itemId": "onion"
+        },
+        {
+          "text": "a bottle of milk",
+          "itemId": "milk"
+        },
+        {
+          "text": "butter",
+          "itemId": "butter"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "chop",
+          "text": "Chop the onion and potato."
+        },
+        {
+          "verb": "boil",
+          "text": "Boil the vegetables with corn."
+        },
+        {
+          "verb": "simmer",
+          "text": "Simmer with milk and butter."
+        },
+        {
+          "verb": "stir",
+          "text": "Stir until creamy."
+        }
+      ],
+      "image": "corn-chowder.png"
+    },
+    "hearty_stew": {
+      "category": "dinner",
+      "difficulty": 5,
+      "label": "Hearty Stew",
+      "ingredients": [
+        "potato",
+        "carrot",
+        "onion",
+        "broth",
+        "garlic",
+        "salt",
+        "corn"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "a potato",
+          "itemId": "potato"
+        },
+        {
+          "text": "a carrot",
+          "itemId": "carrot"
+        },
+        {
+          "text": "an onion",
+          "itemId": "onion"
+        },
+        {
+          "text": "broth",
+          "itemId": "broth"
+        },
+        {
+          "text": "garlic",
+          "itemId": "garlic"
+        },
+        {
+          "text": "salt",
+          "itemId": "salt"
+        },
+        {
+          "text": "200 g of corn",
+          "group": "corn",
+          "acceptsAnyOf": [
+            "corn-fresh",
+            "corn-canned",
+            "corn-frozen"
+          ]
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "chop",
+          "text": "Chop the potato, carrot, and onion."
+        },
+        {
+          "verb": "peel",
+          "text": "Peel and crush the garlic."
+        },
+        {
+          "verb": "boil",
+          "text": "Boil everything in broth."
+        },
+        {
+          "verb": "simmer",
+          "text": "Simmer until the vegetables are soft."
+        },
+        {
+          "verb": "season",
+          "text": "Season with salt."
+        },
+        {
+          "verb": "stir",
+          "text": "Stir well before serving."
+        }
+      ],
+      "image": "hearty-stew.png"
+    },
+    "frozen_pizza": {
+      "category": "dinner",
+      "difficulty": 1,
+      "label": "Frozen Pizza",
+      "ingredients": [
+        "frozen-pizza-base",
+        "pizza-sauce",
+        "mozzarella"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "a frozen pizza base",
+          "itemId": "frozen-pizza-base"
+        },
+        {
+          "text": "pizza sauce",
+          "itemId": "pizza-sauce"
+        },
+        {
+          "text": "mozzarella cheese",
+          "itemId": "mozzarella"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "spread",
+          "text": "Spread the pizza sauce on the base."
+        },
+        {
+          "verb": "sprinkle",
+          "text": "Sprinkle mozzarella on top."
+        },
+        {
+          "verb": "bake",
+          "text": "Bake until the cheese melts."
+        }
+      ],
+      "image": "frozen-pizza.png"
+    },
+    "frozen_fries": {
+      "category": "snack",
+      "difficulty": 1,
+      "label": "Frozen Fries",
+      "ingredients": [
+        "frozen-fries",
+        "salt"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "frozen fries",
+          "itemId": "frozen-fries"
+        },
+        {
+          "text": "salt",
+          "itemId": "salt"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "bake",
+          "text": "Bake the frozen fries."
+        },
+        {
+          "verb": "season",
+          "text": "Season with salt."
+        }
+      ],
+      "image": "frozen-fries.png"
+    },
+    "croissant_breakfast": {
+      "category": "breakfast",
+      "difficulty": 2,
+      "label": "Croissant Breakfast",
+      "ingredients": [
+        "croissant",
+        "butter",
+        "jelly"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "a croissant",
+          "itemId": "croissant"
+        },
+        {
+          "text": "butter",
+          "itemId": "butter"
+        },
+        {
+          "text": "jelly",
+          "itemId": "jelly"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "spread",
+          "text": "Spread butter on the croissant."
+        },
+        {
+          "verb": "spread",
+          "text": "Spread jelly on top."
+        }
+      ],
+      "image": "croissant-breakfast.png"
+    },
+    "grilled_corn": {
+      "category": "snack",
+      "difficulty": 2,
+      "label": "Grilled Corn",
+      "ingredients": [
+        "corn-on-the-cob",
+        "butter"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "corn on the cob",
+          "itemId": "corn-on-the-cob"
+        },
+        {
+          "text": "a little butter",
+          "itemId": "butter"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "boil",
+          "text": "Boil the corn on the cob."
+        },
+        {
+          "verb": "spread",
+          "text": "Spread butter on the corn."
+        }
+      ],
+      "image": "grilled-corn.png"
+    },
+    "watermelon_feta_salad": {
+      "category": "snack",
+      "difficulty": 2,
+      "label": "Watermelon Feta Salad",
+      "ingredients": [
+        "watermelon",
+        "pistachios",
+        "feta",
+        "bowl"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "a slice of watermelon",
+          "itemId": "watermelon"
+        },
+        {
+          "text": "a small handful of pistachios",
+          "itemId": "pistachios"
+        },
+        {
+          "text": "a few cubes of feta cheese",
+          "itemId": "feta"
+        },
+        {
+          "text": "a bowl",
+          "itemId": "bowl"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "chop",
+          "text": "Chop the watermelon into small cubes."
+        },
+        {
+          "verb": "put",
+          "text": "Put the watermelon cubes into the bowl."
+        },
+        {
+          "verb": "add",
+          "text": "Add the pistachios and feta cheese on top."
+        },
+        {
+          "verb": "mix",
+          "text": "Mix the salad gently in the bowl."
+        }
+      ],
+      "image": "assets/images/snack/watermelon-salad.png"
+    },
+    "honey_pancake_stack": {
+      "category": "breakfast",
+      "difficulty": 2,
+      "label": "Honey Pancake Stack",
+      "ingredients": [
+        "flour",
+        "eggs",
+        "milk",
+        "honey",
+        "butter"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "a cup of flour",
+          "itemId": "flour"
+        },
+        {
+          "text": "2 eggs",
+          "itemId": "eggs"
+        },
+        {
+          "text": "a cup of milk",
+          "itemId": "milk"
+        },
+        {
+          "text": "a spoon of honey",
+          "itemId": "honey"
+        },
+        {
+          "text": "a small piece of butter",
+          "itemId": "butter"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "crack",
+          "text": "Crack the eggs into a bowl."
+        },
+        {
+          "verb": "add",
+          "text": "Add the flour and milk to the bowl."
+        },
+        {
+          "verb": "mix",
+          "text": "Mix to make a smooth pancake batter."
+        },
+        {
+          "verb": "fry",
+          "text": "Fry the batter in a pan to make pancakes."
+        },
+        {
+          "verb": "spread",
+          "text": "Spread a little butter on the hot pancakes."
+        },
+        {
+          "verb": "pour",
+          "text": "Pour honey over the pancake stack."
+        }
+      ],
+      "image": "assets/images/breakfast/pancakes.png"
+    },
+    "simple_tomato_pasta": {
+      "category": "lunch",
+      "difficulty": 2,
+      "label": "Simple Tomato Pasta",
+      "ingredients": [
+        "pasta",
+        "tomato-sauce",
+        "tomato",
+        "salt",
+        "pepper"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "a cup of pasta",
+          "itemId": "pasta"
+        },
+        {
+          "text": "half a cup of tomato sauce",
+          "itemId": "tomato-sauce"
+        },
+        {
+          "text": "one tomato",
+          "itemId": "tomato"
+        },
+        {
+          "text": "a pinch of salt",
+          "itemId": "salt"
+        },
+        {
+          "text": "a pinch of pepper",
+          "itemId": "pepper"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "boil",
+          "text": "Boil the pasta in a pot of water."
+        },
+        {
+          "verb": "drain",
+          "text": "Drain the pasta when it is soft."
+        },
+        {
+          "verb": "add",
+          "text": "Add the tomato sauce and chopped tomato."
+        },
+        {
+          "verb": "mix",
+          "text": "Mix the pasta with the sauce."
+        },
+        {
+          "verb": "season",
+          "text": "Season with salt and pepper."
+        }
+      ],
+      "image": "assets/images/dinner/tomato-pasta.png"
+    },
+    "plain_brown_rice_bowl": {
+      "category": "lunch",
+      "difficulty": 1,
+      "label": "Plain Brown Rice Bowl",
+      "ingredients": [
+        "brown-rice",
+        "water",
+        "salt"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "half a cup of brown rice",
+          "itemId": "brown-rice"
+        },
+        {
+          "text": "a cup of water",
+          "itemId": "water"
+        },
+        {
+          "text": "a pinch of salt",
+          "itemId": "salt"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "wash",
+          "text": "Wash the brown rice in clean water."
+        },
+        {
+          "verb": "boil",
+          "text": "Boil the rice in water until soft."
+        },
+        {
+          "verb": "season",
+          "text": "Season the rice with a little salt."
+        }
+      ],
+      "image": "assets/images/lunch/brown-rice.png"
+    },
+    "steak_with_asparagus": {
+      "category": "dinner",
+      "difficulty": 3,
+      "label": "Steak with Asparagus",
+      "ingredients": [
+        "steak",
+        "asparagus",
+        "garlic",
+        "salt",
+        "pepper",
+        "butter"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "a small steak",
+          "itemId": "steak"
+        },
+        {
+          "text": "a handful of asparagus spears",
+          "itemId": "asparagus"
+        },
+        {
+          "text": "one clove of garlic",
+          "itemId": "garlic"
+        },
+        {
+          "text": "a pinch of salt",
+          "itemId": "salt"
+        },
+        {
+          "text": "a pinch of pepper",
+          "itemId": "pepper"
+        },
+        {
+          "text": "a small piece of butter",
+          "itemId": "butter"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "season",
+          "text": "Season the steak with salt and pepper."
+        },
+        {
+          "verb": "chop",
+          "text": "Chop the garlic into small pieces."
+        },
+        {
+          "verb": "fry",
+          "text": "Fry the steak in a pan with butter."
+        },
+        {
+          "verb": "fry",
+          "text": "Fry the asparagus with garlic in the same pan."
+        },
+        {
+          "verb": "put",
+          "text": "Put the steak and asparagus on a plate."
+        }
+      ],
+      "image": "assets/images/dinner/steak-with-asparagus.png"
+    },
+    "simple_tomato_soup": {
+      "category": "lunch",
+      "difficulty": 2,
+      "label": "Simple Tomato Soup",
+      "ingredients": [
+        "tomato-sauce",
+        "tomato",
+        "broth",
+        "salt",
+        "pepper"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "a cup of tomato sauce",
+          "itemId": "tomato-sauce"
+        },
+        {
+          "text": "one tomato",
+          "itemId": "tomato"
+        },
+        {
+          "text": "a cup of broth",
+          "itemId": "broth"
+        },
+        {
+          "text": "a small pinch of salt",
+          "itemId": "salt"
+        },
+        {
+          "text": "a small pinch of pepper",
+          "itemId": "pepper"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "chop",
+          "text": "Chop the tomato into small pieces."
+        },
+        {
+          "verb": "add",
+          "text": "Add the tomato, tomato sauce, and broth to a pot."
+        },
+        {
+          "verb": "boil",
+          "text": "Boil the soup until it is hot."
+        },
+        {
+          "verb": "season",
+          "text": "Season the soup with salt and pepper."
+        }
+      ],
+      "image": "assets/images/lunch/tomato-soup.png"
+    },
+    "green_pesto_pasta": {
+      "category": "lunch",
+      "difficulty": 2,
+      "label": "Green Pesto Pasta",
+      "ingredients": [
+        "pasta",
+        "pesto-sauce",
+        "olive-oil"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "a cup of pasta",
+          "itemId": "pasta"
+        },
+        {
+          "text": "two spoons of pesto sauce",
+          "itemId": "pesto-sauce"
+        },
+        {
+          "text": "a spoon of olive oil",
+          "itemId": "olive-oil"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "boil",
+          "text": "Boil the pasta in a pot of water."
+        },
+        {
+          "verb": "drain",
+          "text": "Drain the pasta when it is soft."
+        },
+        {
+          "verb": "add",
+          "text": "Add the pesto sauce and olive oil to the pasta."
+        },
+        {
+          "verb": "mix",
+          "text": "Mix the pasta until it is green and well coated."
+        }
+      ],
+      "image": "assets/images/dinner/pesto-pasta.png"
+    },
+    "salmon_poke_bowl": {
+      "category": "lunch",
+      "difficulty": 3,
+      "label": "Salmon Poke Bowl",
+      "ingredients": [
+        "salmon",
+        "cucumber",
+        "carrot",
+        "corn-canned",
+        "rice",
+        "lemon",
+        "bowl"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "a small piece of fresh salmon",
+          "itemId": "salmon"
+        },
+        {
+          "text": "half a cucumber",
+          "itemId": "cucumber"
+        },
+        {
+          "text": "one small carrot",
+          "itemId": "carrot"
+        },
+        {
+          "text": "a small handful of canned corn",
+          "itemId": "corn-canned"
+        },
+        {
+          "text": "a cup of cooked rice",
+          "itemId": "rice"
+        },
+        {
+          "text": "half a lemon",
+          "itemId": "lemon"
+        },
+        {
+          "text": "a bowl",
+          "itemId": "bowl"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "slice",
+          "text": "Slice the cucumber and carrot into thin pieces."
+        },
+        {
+          "verb": "chop",
+          "text": "Chop the salmon into small cubes."
+        },
+        {
+          "verb": "put",
+          "text": "Put the cooked rice into the bowl."
+        },
+        {
+          "verb": "add",
+          "text": "Add the salmon, cucumber, carrot, and corn on top of the rice."
+        },
+        {
+          "verb": "sprinkle",
+          "text": "Sprinkle a little lemon juice over the bowl."
+        }
+      ],
+      "image": "assets/images/lunch/salmon-poke.png"
+    },
+    "simple_tuna_sandwich": {
+      "category": "lunch",
+      "difficulty": 2,
+      "label": "Simple Tuna Sandwich",
+      "ingredients": [
+        "bread",
+        "tuna",
+        "lettuce",
+        "mayonnaise"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "2 slices of bread",
+          "itemId": "bread"
+        },
+        {
+          "text": "a small can of tuna",
+          "itemId": "tuna"
+        },
+        {
+          "text": "a leaf of lettuce",
+          "itemId": "lettuce"
+        },
+        {
+          "text": "a spoon of mayonnaise",
+          "itemId": "mayonnaise"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "mix",
+          "text": "Mix the tuna with the mayonnaise in a bowl."
+        },
+        {
+          "verb": "spread",
+          "text": "Spread the tuna mix on one slice of bread."
+        },
+        {
+          "verb": "put",
+          "text": "Put the lettuce on top of the tuna."
+        },
+        {
+          "verb": "put",
+          "text": "Put the second slice of bread on top and press gently."
+        }
+      ],
+      "image": "assets/images/snack/tuna-sandwich.png"
+    },
+    "simple_coleslaw_salad": {
+      "category": "lunch",
+      "difficulty": 2,
+      "label": "Simple Coleslaw Salad",
+      "ingredients": [
+        "cabbage",
+        "carrot",
+        "onion",
+        "mayonnaise"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "a small piece of cabbage",
+          "itemId": "cabbage"
+        },
+        {
+          "text": "one small carrot",
+          "itemId": "carrot"
+        },
+        {
+          "text": "half an onion",
+          "itemId": "onion"
+        },
+        {
+          "text": "two spoons of mayonnaise",
+          "itemId": "mayonnaise"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "slice",
+          "text": "Slice the cabbage and onion into thin strips."
+        },
+        {
+          "verb": "grate",
+          "text": "Grate the carrot into small pieces."
+        },
+        {
+          "verb": "add",
+          "text": "Add the cabbage, carrot, and onion to a bowl."
+        },
+        {
+          "verb": "mix",
+          "text": "Mix in the mayonnaise until the salad is creamy."
+        }
+      ],
+      "image": "assets/images/lunch/coleslaw.png"
+    },
+    "simple_cheese_pizza": {
+      "category": "dinner",
+      "difficulty": 2,
+      "label": "Simple Cheese Pizza",
+      "ingredients": [
+        "frozen-pizza-base",
+        "pizza-sauce",
+        "mozzarella"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "one frozen pizza base",
+          "itemId": "frozen-pizza-base"
+        },
+        {
+          "text": "half a cup of pizza sauce",
+          "itemId": "pizza-sauce"
+        },
+        {
+          "text": "a cup of grated mozzarella cheese",
+          "itemId": "mozzarella"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "spread",
+          "text": "Spread the pizza sauce over the pizza base."
+        },
+        {
+          "verb": "sprinkle",
+          "text": "Sprinkle mozzarella cheese on top."
+        },
+        {
+          "verb": "bake",
+          "text": "Bake the pizza until the cheese is melted."
+        },
+        {
+          "verb": "slice",
+          "text": "Slice the pizza into pieces."
+        }
+      ],
+      "image": "assets/images/dinner/cheese-pizza.png"
+    },
+    "bagel_with_cream_cheese": {
+      "category": "breakfast",
+      "difficulty": 1,
+      "label": "Bagel with Cream Cheese",
+      "ingredients": [
+        "bagel",
+        "cream-cheese"
+      ],
+      "ingredientRequirements": [
+        {
+          "text": "one bagel",
+          "itemId": "bagel"
+        },
+        {
+          "text": "two spoons of cream cheese",
+          "itemId": "cream-cheese"
+        }
+      ],
+      "recipeSteps": [
+        {
+          "verb": "slice",
+          "text": "Slice the bagel into two halves."
+        },
+        {
+          "verb": "spread",
+          "text": "Spread cream cheese on the cut side of the bagel."
+        },
+        {
+          "verb": "put",
+          "text": "Put the two halves together or serve open faced."
+        }
+      ],
+      "image": "assets/images/snack/bagel-cream-cheese.png"
     }
   },
   "verbs": {
-    "spread": { "label": "spread", "definition": "To put something over a surface in a thin layer." },
-    "put": { "label": "put", "definition": "To place something somewhere." },
-    "pour": { "label": "pour", "definition": "To make a liquid flow from a container." },
-    "add": { "label": "add", "definition": "To put something together with something else." },
-    "stir": { "label": "stir", "definition": "To mix something by moving a spoon around." },
-    "wash": { "label": "wash", "definition": "To clean something with water." },
-    "chop": { "label": "chop", "definition": "To cut something into pieces with a knife." },
-    "mix": { "label": "mix", "definition": "To combine two or more things together." }
+    "spread": {
+      "label": "spread",
+      "definition": "To put something over a surface in a thin layer."
+    },
+    "put": {
+      "label": "put",
+      "definition": "To place something somewhere."
+    },
+    "pour": {
+      "label": "pour",
+      "definition": "To make a liquid flow from a container."
+    },
+    "add": {
+      "label": "add",
+      "definition": "To put something together with something else."
+    },
+    "stir": {
+      "label": "stir",
+      "definition": "To mix something by moving a spoon around."
+    },
+    "wash": {
+      "label": "wash",
+      "definition": "To clean something with water."
+    },
+    "chop": {
+      "label": "chop",
+      "definition": "To cut something into pieces with a knife."
+    },
+    "mix": {
+      "label": "mix",
+      "definition": "To combine two or more things together."
+    },
+    "fry": {
+      "label": "fry",
+      "definition": "To cook something in hot oil or butter."
+    },
+    "flip": {
+      "label": "flip",
+      "definition": "To turn something over quickly."
+    },
+    "peel": {
+      "label": "peel",
+      "definition": "To remove the skin from a fruit or vegetable."
+    },
+    "blend": {
+      "label": "blend",
+      "definition": "To mix things together until smooth."
+    },
+    "crack": {
+      "label": "crack",
+      "definition": "To break open something hard, like an egg."
+    },
+    "whisk": {
+      "label": "whisk",
+      "definition": "To beat eggs or liquid quickly with a whisk."
+    },
+    "season": {
+      "label": "season",
+      "definition": "To add salt, pepper, or spices for flavor."
+    },
+    "boil": {
+      "label": "boil",
+      "definition": "To cook something in very hot water."
+    },
+    "simmer": {
+      "label": "simmer",
+      "definition": "To cook gently just below boiling."
+    },
+    "drain": {
+      "label": "drain",
+      "definition": "To pour off liquid from food."
+    },
+    "sprinkle": {
+      "label": "sprinkle",
+      "definition": "To scatter small pieces over something."
+    },
+    "slice": {
+      "label": "slice",
+      "definition": "To cut something into thin flat pieces."
+    },
+    "scoop": {
+      "label": "scoop",
+      "definition": "To pick up something with a spoon or scoop."
+    },
+    "bake": {
+      "label": "bake",
+      "definition": "To cook something in an oven."
+    },
+    "cool": {
+      "label": "cool",
+      "definition": "To let hot food become less hot."
+    },
+    "grate": {
+      "label": "grate",
+      "definition": "To shred food into small pieces with a grater."
+    }
   }
 }

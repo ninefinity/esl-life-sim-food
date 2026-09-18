@@ -1,7 +1,5 @@
 'use strict';
 
-const { escapeHtml, spawnConfetti, clearConfetti } = window.GameUtils;
-
 const StageEating = {
   init() {
     this.dishEl = document.getElementById('eating-dish');

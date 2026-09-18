@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Open recipe book">
+  <defs>
+    <linearGradient id="coverGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9c6634"/>
+      <stop offset="0.45" stop-color="#7f4c29"/>
+      <stop offset="1" stop-color="#623820"/>
+    </linearGradient>
+
+    <linearGradient id="pageGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdf8ee"/>
+      <stop offset="1" stop-color="#f2e7d2"/>
+    </linearGradient>
+
+    <linearGradient id="pageGradR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fcf6eb"/>
+      <stop offset="1" stop-color="#efe3cd"/>
+    </linearGradient>
+
+    <linearGradient id="spineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4a2c16" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#4a2c16" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#4a2c16" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="headShadow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a2410" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#3a2410" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="spineShadeL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5a3a1e" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5a3a1e" stop-opacity="0.16"/>
+    </linearGradient>
+    <linearGradient id="spineShadeR" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#5a3a1e" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5a3a1e" stop-opacity="0.16"/>
+    </linearGradient>
+
+    <linearGradient id="edgeShadeL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5a3a1e" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#5a3a1e" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="edgeShadeR" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#5a3a1e" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#5a3a1e" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="thickGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efe3ca"/>
+      <stop offset="1" stop-color="#d9c8a6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cover -->
+  <rect x="20" y="58" width="1160" height="710" rx="28" fill="url(#coverGrad)"/>
+  <rect x="20.75" y="58.75" width="1158.5" height="708.5" rx="27.25"
+        fill="none" stroke="#ffe6c8" stroke-opacity="0.22" stroke-width="1.5"/>
+  <rect x="20" y="58" width="1160" height="710" rx="28"
+        fill="none" stroke="#3a2010" stroke-opacity="0.35" stroke-width="1.5"/>
+
+  <!-- Inner recess so the pages sit inside the cover (radius tracks the cover curve) -->
+  <rect x="34" y="66" width="1132" height="686" rx="16" fill="#3f2513" opacity="0.35"/>
+
+  <!-- Pages (paper) + bottom thickness as one aligned stack per side.
+       Shared outer radius so the cream corner does not notch against the edge. -->
+  <!-- Left page block (thickness shows as the strip below the face) -->
+  <path d="M60 66 H596 V722 H60 Q44 722 44 706 V82 Q44 66 60 66 Z" fill="url(#thickGrad)"/>
+  <path d="M60 66 H596 V708 H60 Q44 708 44 692 V82 Q44 66 60 66 Z" fill="url(#pageGrad)"/>
+
+  <!-- Right page block -->
+  <path d="M604 66 H1140 Q1156 66 1156 82 V706 Q1156 722 1140 722 H604 V66 Z" fill="url(#thickGrad)"/>
+  <path d="M604 66 H1140 Q1156 66 1156 82 V692 Q1156 708 1140 708 H604 V66 Z" fill="url(#pageGradR)"/>
+
+  <!-- Soft seam where the top sheet sits on the stack -->
+  <path d="M44 708 H596" stroke="#2f1c0d" stroke-opacity="0.10" stroke-width="1" fill="none"/>
+  <path d="M604 708 H1156" stroke="#2f1c0d" stroke-opacity="0.10" stroke-width="1" fill="none"/>
+  <path d="M50 722 H1150" stroke="#2f1c0d" stroke-opacity="0.16" stroke-width="1.5" fill="none"/>
+
+  <!-- Soft inner shadows: outer edges + near the spine (clipped to page face height) -->
+  <rect x="44" y="66" width="54" height="642" fill="url(#edgeShadeL)"/>
+  <rect x="1102" y="66" width="54" height="642" fill="url(#edgeShadeR)"/>
+  <rect x="516" y="66" width="80" height="642" fill="url(#spineShadeL)"/>
+  <rect x="604" y="66" width="80" height="642" fill="url(#spineShadeR)"/>
+
+  <!-- Page head: shadow cast down over inserted bookmark bases -->
+  <rect x="44" y="66" width="552" height="22" fill="url(#headShadow)"/>
+  <rect x="604" y="66" width="552" height="22" fill="url(#headShadow)"/>
+
+  <!-- Center spine / crease -->
+  <rect x="568" y="66" width="64" height="642" fill="url(#spineGrad)"/>
+  <line x1="600" y1="74" x2="600" y2="700" stroke="#fff7ec" stroke-opacity="0.45" stroke-width="1.2"/>
+  <line x1="596" y1="66" x2="596" y2="708" stroke="#3a2410" stroke-opacity="0.10" stroke-width="1"/>
+  <line x1="604" y1="66" x2="604" y2="708" stroke="#3a2410" stroke-opacity="0.10" stroke-width="1"/>
+
+  <!-- Bottom bar tray for the pager -->
+  <rect x="44" y="726" width="1112" height="38" rx="12" fill="#000000" opacity="0.13"/>
+</svg>

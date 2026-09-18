@@ -2,10 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>ESL Life Sim — Food</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Special+Elite&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/theme-shared.css" />
+  <link rel="stylesheet" href="css/theme-menu.css" />
+  <link rel="stylesheet" href="css/theme-game.css" />
   <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/recipe-book.css" />
   <link rel="stylesheet" href="css/shop.css" />
+  <link rel="stylesheet" href="css/town-map.css" />
   <link rel="stylesheet" href="css/cooking.css" />
   <link rel="stylesheet" href="css/pictionary.css" />
 </head>
@@ -13,92 +21,294 @@
 
   <p id="boot-error" class="boot-error hidden">Could not load game data. Please refresh.</p>
 
-  <!-- Stage 1: Meal Planning -->
-  <section id="stage-planning" class="stage" data-stage="1">
-    <header class="stage-header">
-      <h1>ESL Life Sim</h1>
-      <p class="stage-subtitle">Hmmm, what do I want to make today?</p>
+  <!-- Stage 1: Meal Planning — recipe book -->
+  <section id="stage-planning" class="stage stage--planning" data-stage="1">
+    <header class="stage-header menu-hero recipe-book-hero">
+      <h1 class="menu-title">My Recipe Book</h1>
+      <p class="stage-subtitle menu-subtitle">Hmmm, what do I want to make today?</p>
     </header>
-    <div id="planning-categories" class="category-picker"></div>
-    <div id="planning-meals" class="meal-list"></div>
-    <div id="planning-detail" class="meal-detail hidden"></div>
-    <button id="planning-continue" class="btn btn--primary hidden" type="button">Continue to shop</button>
-  </section>
 
-  <!-- Stage 2: Shop Selection -->
-  <section id="stage-shop-select" class="stage hidden" data-stage="2">
-    <header class="stage-header">
-      <h2>Where should we shop?</h2>
-    </header>
-    <div id="shop-cards" class="shop-cards"></div>
-  </section>
+    <div class="recipe-book" id="recipe-book">
+      <div
+        class="recipe-panel recipe-book__frame"
+        id="recipe-panel"
+        role="tabpanel"
+        aria-labelledby=""
+        tabindex="0"
+      >
+        <img
+          class="recipe-book__art"
+          src="assets/images/book-open.svg"
+          alt=""
+          width="1200"
+          height="800"
+          decoding="async"
+        />
 
-  <!-- Stage 3: Shopping -->
-  <section id="stage-shopping" class="stage hidden" data-stage="3">
-    <header class="stage-header stage-header--compact">
-      <p id="game-label" class="game-label">Shopping</p>
-      <span id="score-display" class="score-display">0/0</span>
-    </header>
-    <div class="shop-layout">
-      <aside class="shop-side">
-        <div class="shop-list-panel">
-          <h3>Shopping list</h3>
-          <ul id="shop-list-rows" class="shop-list__rows"></ul>
+        <!-- Peek tabs along the top; the open category hangs on the LEFT page.
+             Surprise (dice) always hangs on the RIGHT page margin. -->
+        <div
+          id="recipe-ribbon-active"
+          class="recipe-ribbon-active"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          id="recipe-tabs"
+          class="recipe-tabs"
+          role="tablist"
+          aria-label="Meal types"
+        ></div>
+
+        <div class="recipe-spread" id="recipe-spread" aria-live="polite">
+          <article class="recipe-leaf recipe-leaf--left" id="recipe-left"></article>
+          <article class="recipe-leaf recipe-leaf--right" id="recipe-right"></article>
+          <div class="recipe-flip" id="recipe-flip" aria-hidden="true"></div>
         </div>
-        <div id="shop-cart-wrap" class="shop-cart-wrap">
-          <h3>Basket</h3>
-          <div id="shop-cart" class="shop-cart">
-            <div id="shop-basket-items" class="shop-basket-items"></div>
-          </div>
-          <button id="goto-checkout-btn" class="btn btn--primary" type="button">Checkout</button>
+
+        <div class="recipe-pager recipe-pager--left">
+          <button id="recipe-prev" class="recipe-pager__btn" type="button" aria-label="Previous recipe" hidden>‹</button>
         </div>
-      </aside>
-      <main class="shop-main">
-        <div id="shop-category-tabs" class="shop-category-tabs"></div>
-        <div id="shop-shelf-wrap" class="shop-shelf-wrap">
-          <div id="shop-shelf-grid" class="shop-shelf-grid"></div>
+        <div class="recipe-pager recipe-pager--right">
+          <p id="recipe-page-label" class="recipe-pager__label"></p>
+          <button id="recipe-next" class="recipe-pager__btn" type="button" aria-label="Next recipe" hidden>›</button>
         </div>
-        <div id="shop-checkout" class="shop-checkout hidden">
-          <p id="checkout-total-words" class="checkout-total"></p>
-          <div class="shop-pay">
-            <p>Your payment <span id="payment-amount"></span></p>
-            <div id="shop-pay-tray" class="shop-pay-tray"></div>
-            <p>Wallet</p>
-            <div id="shop-wallet" class="shop-wallet"></div>
-          </div>
-          <div class="shop-checkout__actions">
-            <button id="checkout-back-btn" class="btn" type="button">← Edit basket</button>
-            <button id="pay-btn" class="btn btn--primary" type="button" disabled>Pay</button>
-          </div>
-        </div>
-      </main>
+      </div>
     </div>
-    <p id="shop-status" class="shop-status" aria-live="polite"></p>
+
+    <button id="planning-continue" class="btn btn--primary recipe-continue hidden" type="button">
+      Let’s go shopping →
+    </button>
   </section>
 
-  <!-- Stage 4: Cooking -->
-  <section id="stage-cooking" class="stage hidden" data-stage="4">
-    <header class="stage-header">
-      <h2>Cooking time!</h2>
-      <p class="stage-subtitle">Remember the recipe steps and fill in the verbs.</p>
-    </header>
-    <ol id="cooking-recipe" class="cooking-recipe"></ol>
-    <div id="cooking-verb-bank" class="cooking-verb-bank hidden"></div>
-    <button id="cooking-ready-btn" class="btn btn--primary" type="button">Ready to cook?</button>
-    <button id="cooking-submit-btn" class="btn btn--primary hidden" type="button">Submit recipe</button>
-    <p id="cooking-feedback" class="cooking-feedback"></p>
+  <!-- Stage 2: Town Map + Shopping -->
+  <section id="stage-town" class="stage stage--game screen-game hidden" data-stage="2">
+    <div id="town-map-view" class="town-map-view">
+      <header class="stage-header menu-hero town-map-hero">
+        <h2 class="menu-title" id="town-map-title">Town Map</h2>
+        <p class="stage-subtitle" id="town-map-subtitle">Go to the shops for your ingredients.</p>
+        <div class="town-esl-chips" aria-label="Shopping phrases">
+          <span class="town-esl-chip">Go to…</span>
+          <span class="town-esl-chip">I need…</span>
+          <span class="town-esl-chip">Buy…</span>
+          <span class="town-esl-chip">Pay at the checkout</span>
+        </div>
+        <p class="town-wallet" id="town-wallet-display" role="status" aria-live="polite"></p>
+      </header>
+
+      <div id="town-low-balance-toast" class="town-low-balance-toast hidden" role="status" aria-live="polite">
+        <p class="town-low-balance-toast__text">Running low on wordollars — play a mini-game!</p>
+        <button id="town-low-balance-games-btn" class="btn btn--primary btn--compact" type="button">Go to games</button>
+        <button id="town-low-balance-dismiss" class="btn btn--close town-low-balance-toast__dismiss" type="button" aria-label="Dismiss">✕</button>
+      </div>
+
+      <div class="town-map-wrap">
+        <svg id="town-map" class="town-map" viewBox="0 0 800 520" role="img" aria-label="Bird's-eye town map">
+          <defs>
+            <pattern id="map-grass" width="40" height="40" patternUnits="userSpaceOnUse">
+              <rect width="40" height="40" fill="#8bc34a"/>
+              <path d="M0 20 H40 M20 0 V40" stroke="#7cb342" stroke-width="1" opacity="0.35"/>
+            </pattern>
+            <symbol id="map-lock" viewBox="0 0 24 24">
+              <rect x="5" y="11" width="14" height="10" rx="2" fill="#666"/>
+              <path d="M8 11 V8 a4 4 0 0 1 8 0 v3" fill="none" stroke="#666" stroke-width="2.5"/>
+            </symbol>
+          </defs>
+
+          <g id="map-ground">
+            <rect width="800" height="520" fill="url(#map-grass)"/>
+          </g>
+
+          <g id="map-roads">
+            <rect x="0" y="155" width="800" height="36" fill="#5d5d5d"/>
+            <rect x="0" y="295" width="800" height="36" fill="#5d5d5d"/>
+            <rect x="0" y="435" width="800" height="36" fill="#5d5d5d"/>
+            <rect x="255" y="0" width="36" height="520" fill="#5d5d5d"/>
+            <rect x="505" y="0" width="36" height="520" fill="#5d5d5d"/>
+          </g>
+
+          <g id="map-buildings">
+            <g class="map-building" data-store-id="home" transform="translate(40, 30)">
+              <rect class="map-building__shape" x="0" y="20" width="120" height="90" rx="8" fill="#ffcc80"/>
+              <polygon class="map-building__roof" points="60,0 130,25 0,25" fill="#e65100"/>
+              <text class="map-building__label" x="60" y="75" text-anchor="middle">Home</text>
+            </g>
+
+            <g class="map-building" data-store-id="corner-shop" transform="translate(310, 30)">
+              <rect class="map-building__shape" x="0" y="20" width="100" height="90" rx="6" fill="#90caf9"/>
+              <rect class="map-building__roof" x="-5" y="10" width="110" height="18" rx="4" fill="#1565c0"/>
+              <text class="map-building__label" x="50" y="75" text-anchor="middle">Corner Shop</text>
+            </g>
+
+            <g class="map-building map-building--locked" data-store-id="department-store" transform="translate(430, 30)">
+              <rect class="map-building__shape" x="0" y="20" width="100" height="90" rx="6" fill="#b0bec5"/>
+              <rect class="map-building__roof" x="-5" y="10" width="110" height="18" rx="4" fill="#546e7a"/>
+              <text class="map-building__label" x="50" y="75" text-anchor="middle">Dept Store</text>
+              <use class="map-building__lock" href="#map-lock" x="38" y="28" width="24" height="24"/>
+            </g>
+
+            <g class="map-building map-building--locked" data-store-id="frozen-goods" transform="translate(40, 200)">
+              <rect class="map-building__shape" x="0" y="20" width="110" height="70" rx="6" fill="#b3e5fc"/>
+              <rect class="map-building__roof" x="-5" y="10" width="120" height="16" rx="4" fill="#0288d1"/>
+              <text class="map-building__label" x="55" y="65" text-anchor="middle">Frozen Goods</text>
+              <use class="map-building__lock" href="#map-lock" x="43" y="28" width="24" height="24"/>
+            </g>
+
+            <g class="map-building map-building--locked" data-store-id="delicacies" transform="translate(40, 340)">
+              <rect class="map-building__shape" x="0" y="20" width="110" height="70" rx="6" fill="#ce93d8"/>
+              <rect class="map-building__roof" x="-5" y="10" width="120" height="16" rx="4" fill="#7b1fa2"/>
+              <text class="map-building__label" x="55" y="65" text-anchor="middle">Delicacies</text>
+              <use class="map-building__lock" href="#map-lock" x="43" y="28" width="24" height="24"/>
+            </g>
+
+            <g class="map-building" data-store-id="supermarket" transform="translate(310, 340)">
+              <rect class="map-building__shape" x="0" y="10" width="170" height="100" rx="8" fill="#fff59d"/>
+              <rect class="map-building__roof" x="-8" y="0" width="186" height="20" rx="4" fill="#f9a825"/>
+              <text class="map-building__label" x="85" y="70" text-anchor="middle">Supermarket</text>
+            </g>
+
+            <g class="map-building" data-store-id="farmers-market" transform="translate(560, 30)">
+              <rect class="map-building__shape" x="0" y="50" width="45" height="55" rx="4" fill="#a5d6a7"/>
+              <rect class="map-building__shape" x="50" y="50" width="45" height="55" rx="4" fill="#81c784"/>
+              <rect class="map-building__shape" x="100" y="50" width="45" height="55" rx="4" fill="#a5d6a7"/>
+              <rect class="map-building__shape" x="150" y="50" width="45" height="55" rx="4" fill="#81c784"/>
+              <rect class="map-building__awning" x="-5" y="35" width="210" height="18" rx="4" fill="#2e7d32"/>
+              <text class="map-building__label" x="100" y="95" text-anchor="middle">Farmer's Market</text>
+            </g>
+
+            <g class="map-building map-building--locked" data-store-id="bakery" transform="translate(620, 340)">
+              <rect class="map-building__shape" x="0" y="20" width="120" height="90" rx="8" fill="#bcaaa4"/>
+              <rect class="map-building__roof" x="-5" y="10" width="130" height="18" rx="4" fill="#6d4c41"/>
+              <text class="map-building__label" x="60" y="75" text-anchor="middle">Bakery</text>
+              <use class="map-building__lock" href="#map-lock" x="48" y="28" width="24" height="24"/>
+            </g>
+
+            <g class="map-building map-building--games" data-store-id="word-games" transform="translate(175, 400)">
+              <rect class="map-building__shape" x="0" y="15" width="90" height="65" rx="8" fill="#f48fb1"/>
+              <rect class="map-building__roof" x="-4" y="5" width="98" height="14" rx="4" fill="#c2185b"/>
+              <circle cx="25" cy="45" r="8" fill="#fff59d"/>
+              <circle cx="45" cy="45" r="8" fill="#81d4fa"/>
+              <circle cx="65" cy="45" r="8" fill="#a5d6a7"/>
+              <text class="map-building__label" x="45" y="68" text-anchor="middle">Word Games</text>
+            </g>
+          </g>
+
+          <g id="map-highlights"></g>
+
+          <g id="map-player" transform="translate(100, 95)">
+            <circle r="14" fill="#ff5722" stroke="#fff" stroke-width="3"/>
+            <circle r="5" cy="-3" fill="#fff" opacity="0.9"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div id="town-store-view" class="town-store-view hidden">
+      <div class="game-wrapper">
+        <header class="game-header stage-header stage-header--compact">
+          <div class="town-store-header">
+            <button id="town-back-map-btn" class="btn btn--secondary btn--compact" type="button">← Back to map</button>
+            <div>
+              <p id="game-label" class="game-label">Shopping</p>
+              <p id="store-category-line" class="store-category-line"></p>
+            </div>
+            <p id="store-wallet-display" class="town-wallet town-wallet--compact" role="status"></p>
+          </div>
+          <span id="score-display" class="score-display" role="status" aria-live="polite">0/0</span>
+        </header>
+        <div class="shop-layout game-content">
+          <aside class="shop-side">
+            <div id="shopping-notebook" class="shop-list-panel solo-levels-notebook list-notebook">
+              <h3 class="nb-solo-heading">Shopping list</h3>
+              <ul id="shop-list-rows" class="shop-list__rows list-notebook-lines" role="list"></ul>
+            </div>
+            <div id="shop-cart-wrap" class="shop-cart-wrap game-panel">
+              <h3>Basket</h3>
+              <div id="shop-cart" class="shop-cart" role="region" aria-label="Shopping basket">
+                <div id="shop-basket-items" class="shop-basket-items" role="list"></div>
+              </div>
+              <button id="goto-checkout-btn" class="btn btn--primary" type="button">Checkout</button>
+            </div>
+          </aside>
+          <main class="shop-main">
+            <div id="shop-category-tabs" class="shop-category-tabs"></div>
+            <div id="shop-shelf-wrap" class="shop-shelf-wrap game-panel">
+              <div id="shop-shelf-grid" class="shop-shelf-grid" aria-label="Store shelves"></div>
+            </div>
+            <div id="shop-checkout" class="shop-checkout game-panel hidden">
+              <p id="checkout-total-words" class="checkout-total" aria-live="polite"></p>
+              <div class="shop-pay">
+                <p>Your payment <span id="payment-amount"></span></p>
+                <div id="shop-pay-tray" class="shop-pay-tray"></div>
+                <p>Wallet</p>
+                <div id="shop-wallet" class="shop-wallet"></div>
+              </div>
+              <div class="shop-checkout__actions">
+                <button id="checkout-back-btn" class="btn btn--secondary" type="button">← Edit basket</button>
+                <button id="pay-btn" class="btn btn--primary" type="button" disabled>Pay</button>
+              </div>
+            </div>
+            <div id="shop-post-checkout" class="shop-post-checkout hidden">
+              <p id="shop-post-checkout-msg" class="shop-post-checkout__msg"></p>
+              <button id="shop-go-home-btn" class="btn btn--primary hidden" type="button">Got everything? → Go home to cook</button>
+              <button id="shop-back-map-btn" class="btn btn--secondary" type="button">Back to map</button>
+            </div>
+          </main>
+        </div>
+        <p id="shop-status" class="shop-status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div id="town-games-view" class="town-games-view hidden">
+      <header class="stage-header menu-hero town-map-hero">
+        <h2 class="menu-title">Word Games</h2>
+        <p class="stage-subtitle">Earn wordollars with vocabulary from your recipe!</p>
+        <p class="town-wallet" id="games-wallet-display" role="status" aria-live="polite"></p>
+      </header>
+      <div class="town-games-body game-panel">
+        <p class="town-games-intro">Pick a game to practice words from <strong id="games-recipe-label"></strong>.</p>
+        <div id="mini-games-picker" class="mini-games-picker" role="list"></div>
+        <div id="mini-games-panel" class="mini-games-panel"></div>
+        <p id="mini-games-result" class="mini-games-result" aria-live="polite"></p>
+      </div>
+      <button id="town-back-map-from-games" class="btn btn--secondary town-games-back" type="button">← Back to map</button>
+    </div>
   </section>
 
-  <!-- Stage 5: Eating / Completion -->
-  <section id="stage-eating" class="stage hidden" data-stage="5">
-    <header class="stage-header">
-      <h2 id="eating-title">Bon appétit!</h2>
+  <!-- Stage 3: Cooking -->
+  <section id="stage-cooking" class="stage stage--game screen-game hidden" data-stage="3">
+    <div class="game-wrapper">
+      <header class="game-header stage-header">
+        <h2>Cooking time!</h2>
+        <p class="stage-subtitle">Remember the recipe steps and fill in the verbs.</p>
+      </header>
+      <div class="cooking-layout game-content">
+        <!-- Notebook: recipe steps only (#recipe-notebook) -->
+        <div id="recipe-notebook" class="recipe-notebook solo-levels-notebook list-notebook">
+          <h3 class="nb-solo-heading">Recipe</h3>
+          <ol id="cooking-recipe" class="cooking-recipe list-notebook-lines"></ol>
+        </div>
+        <aside class="cooking-workspace game-panel">
+          <h3>Verb bank</h3>
+          <div id="cooking-verb-bank" class="cooking-verb-bank hidden"></div>
+          <button id="cooking-ready-btn" class="btn btn--primary" type="button">Ready to cook?</button>
+          <button id="cooking-submit-btn" class="btn btn--primary hidden" type="button">Submit recipe</button>
+          <p id="cooking-feedback" class="cooking-feedback"></p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stage 4: Eating / Completion -->
+  <section id="stage-eating" class="stage hidden" data-stage="4">
+    <header class="stage-header menu-hero">
+      <h2 id="eating-title" class="menu-title">Bon appétit!</h2>
     </header>
     <div id="eating-dish" class="eating-dish"></div>
     <p id="eating-msg" class="eating-msg"></p>
     <div class="eating-actions">
       <button id="eating-play-again" class="btn btn--primary" type="button">Play Again</button>
-      <button id="eating-next-meal" class="btn" type="button">Next Meal</button>
+      <button id="eating-next-meal" class="btn btn--secondary" type="button">Next Meal</button>
     </div>
   </section>
 
@@ -116,15 +326,52 @@
     </div>
   </div>
 
+  <div id="locked-store-modal" class="town-modal hidden" role="dialog" aria-modal="true" aria-labelledby="locked-store-title">
+    <div class="town-modal__card">
+      <h2 id="locked-store-title" class="town-modal__title">Full version shop</h2>
+      <p class="town-modal__text">This shop is part of the full town. Some recipes need ingredients from here.</p>
+      <div class="town-modal__actions">
+        <button id="locked-store-back-btn" class="btn btn--primary" type="button">Go back to map</button>
+        <button id="locked-store-unlock-btn" class="btn btn--secondary" type="button">Unlock full version</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="missing-ingredients-modal" class="town-modal hidden" role="dialog" aria-modal="true" aria-labelledby="missing-ingredients-title">
+    <div class="town-modal__card">
+      <h2 id="missing-ingredients-title" class="town-modal__title">You still need:</h2>
+      <ul id="missing-ingredients-list" class="town-modal__list"></ul>
+      <div class="town-modal__actions">
+        <button id="missing-ingredients-back-btn" class="btn btn--primary" type="button">Go back to map</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="full-version-recipe-modal" class="town-modal hidden" role="dialog" aria-modal="true" aria-labelledby="full-version-recipe-title">
+    <div class="town-modal__card">
+      <h2 id="full-version-recipe-title" class="town-modal__title">Full version recipe</h2>
+      <p class="town-modal__text">This recipe needs ingredients from shops in the full town. Unlock the full version to cook it!</p>
+      <div class="town-modal__actions">
+        <button id="full-version-recipe-close-btn" class="btn btn--primary" type="button">OK</button>
+      </div>
+    </div>
+  </div>
+
   <div id="confetti-layer" class="confetti-layer" aria-hidden="true"></div>
 
   <script src="js/utils.js"></script>
   <script src="js/state.js"></script>
-  <script src="js/data-meals.js"></script>
   <script src="js/data-items.js"></script>
+  <script src="js/data-stores.js"></script>
+  <script src="js/data-meals.js"></script>
+  <script src="js/recipe-shopping.js"></script>
+  <script src="js/wallet.js"></script>
+  <script src="js/recipe-vocab.js"></script>
+  <script src="js/persistence.js"></script>
   <script src="js/stage-planning.js"></script>
-  <script src="js/stage-shop-select.js"></script>
+  <script src="js/stage-map.js"></script>
   <script src="js/stage-shopping.js"></script>
+  <script src="js/mini-games.js"></script>
   <script src="js/stage-cooking.js"></script>
   <script src="js/stage-eating.js"></script>
   <script src="js/pictionary.js"></script>

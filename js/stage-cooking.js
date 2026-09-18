@@ -1,7 +1,5 @@
 'use strict';
 
-const { escapeHtml, shuffle } = window.GameUtils;
-
 const StageCooking = {
   init() {
     this.recipeEl = document.getElementById('cooking-recipe');
@@ -119,7 +117,7 @@ const StageCooking = {
     if (allCorrect) {
       this.feedbackEl.textContent = 'Great job! Your recipe is correct.';
       this.feedbackEl.classList.add('cooking-feedback--success');
-      window.setTimeout(() => GameState.setStage(5), 1500);
+      window.setTimeout(() => GameState.setStage(4), 1500);
     } else {
       this.feedbackEl.textContent = 'Some verbs are wrong. Fix them and try again.';
       this.feedbackEl.classList.add('cooking-feedback--error');

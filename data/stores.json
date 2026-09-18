@@ -1,0 +1,260 @@
+{
+  "stores": {
+    "home": {
+      "id": "home",
+      "name": "Home",
+      "mapPosition": "top-left",
+      "locked": false,
+      "paidTier": "free",
+      "difficultyBand": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "itemIds": [],
+      "categoryLine": "Your kitchen"
+    },
+    "corner-shop": {
+      "id": "corner-shop",
+      "name": "Corner Shop",
+      "mapPosition": "top-center-left",
+      "locked": false,
+      "paidTier": "free",
+      "difficultyBand": [
+        1,
+        2
+      ],
+      "itemIds": [
+        "bread",
+        "peanut-butter",
+        "jelly",
+        "oats",
+        "cereal",
+        "milk",
+        "butter",
+        "eggs",
+        "yogurt",
+        "bowl",
+        "honey",
+        "salt",
+        "pepper",
+        "chips",
+        "cookie",
+        "chocolate",
+        "popcorn",
+        "juice",
+        "water",
+        "corn-canned",
+        "tomato-sauce",
+        "broth",
+        "brown-rice",
+        "pesto-sauce",
+        "olive-oil",
+        "rice",
+        "tuna",
+        "mayonnaise",
+        "cream-cheese"
+      ],
+      "categoryLine": "Snacks & basics"
+    },
+    "department-store": {
+      "id": "department-store",
+      "name": "Department Store",
+      "mapPosition": "top-center-right",
+      "locked": true,
+      "paidTier": "pro",
+      "difficultyBand": [
+        3,
+        4,
+        5
+      ],
+      "itemIds": [
+        "bread",
+        "cheese",
+        "pasta",
+        "tomato-sauce",
+        "flour",
+        "sugar",
+        "bowl",
+        "chocolate-chips",
+        "croissant",
+        "bagel",
+        "muffin"
+      ],
+      "categoryLine": "Household & kitchen"
+    },
+    "frozen-goods": {
+      "id": "frozen-goods",
+      "name": "Frozen Goods",
+      "mapPosition": "left-upper",
+      "locked": true,
+      "paidTier": "pro",
+      "difficultyBand": [
+        1,
+        2
+      ],
+      "itemIds": [
+        "corn-frozen",
+        "frozen-pizza-base",
+        "frozen-fries",
+        "frozen-vegetables"
+      ],
+      "categoryLine": "Frozen food"
+    },
+    "delicacies": {
+      "id": "delicacies",
+      "name": "Delicacies",
+      "mapPosition": "left-lower",
+      "locked": true,
+      "paidTier": "pro",
+      "difficultyBand": [
+        4,
+        5
+      ],
+      "itemIds": [
+        "honey",
+        "chocolate",
+        "croissant",
+        "muffin",
+        "garlic",
+        "cheese"
+      ],
+      "categoryLine": "Special treats"
+    },
+    "supermarket": {
+      "id": "supermarket",
+      "name": "Supermarket",
+      "mapPosition": "center-bottom",
+      "locked": false,
+      "paidTier": "free",
+      "difficultyBand": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "itemIds": [
+        "bread",
+        "milk",
+        "cheese",
+        "yogurt",
+        "butter",
+        "eggs",
+        "cereal",
+        "oats",
+        "peanut-butter",
+        "jelly",
+        "pasta",
+        "tomato-sauce",
+        "broth",
+        "onion",
+        "potato",
+        "garlic",
+        "tomato",
+        "carrot",
+        "lettuce",
+        "apple",
+        "banana",
+        "orange",
+        "grapes",
+        "flour",
+        "sugar",
+        "chocolate-chips",
+        "bowl",
+        "honey",
+        "salt",
+        "pepper",
+        "chips",
+        "cookie",
+        "chocolate",
+        "popcorn",
+        "juice",
+        "water",
+        "corn-canned",
+        "watermelon",
+        "pistachios",
+        "feta",
+        "brown-rice",
+        "steak",
+        "asparagus",
+        "pesto-sauce",
+        "olive-oil",
+        "salmon",
+        "cucumber",
+        "rice",
+        "lemon",
+        "tuna",
+        "mayonnaise",
+        "cabbage",
+        "cream-cheese",
+        "pizza-sauce",
+        "mozzarella"
+      ],
+      "categoryLine": "Everything you need"
+    },
+    "farmers-market": {
+      "id": "farmers-market",
+      "name": "Farmer's Market",
+      "mapPosition": "right-upper",
+      "locked": false,
+      "paidTier": "free",
+      "difficultyBand": [
+        1,
+        2,
+        3
+      ],
+      "itemIds": [
+        "apple",
+        "green-apple",
+        "red-apple",
+        "banana",
+        "orange",
+        "grapes",
+        "tomato",
+        "carrot",
+        "lettuce",
+        "onion",
+        "potato",
+        "garlic",
+        "corn-fresh",
+        "corn-on-the-cob",
+        "watermelon",
+        "pistachios",
+        "feta",
+        "steak",
+        "asparagus",
+        "salmon",
+        "cucumber",
+        "lemon",
+        "cabbage"
+      ],
+      "categoryLine": "Fresh produce"
+    },
+    "bakery": {
+      "id": "bakery",
+      "name": "Bakery",
+      "mapPosition": "right-bottom",
+      "locked": true,
+      "paidTier": "pro",
+      "difficultyBand": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "itemIds": [
+        "bread",
+        "croissant",
+        "bagel",
+        "muffin",
+        "flour",
+        "sugar",
+        "chocolate-chips"
+      ],
+      "categoryLine": "Fresh baked goods"
+    }
+  }
+}

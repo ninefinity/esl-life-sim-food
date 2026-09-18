@@ -1,143 +1,98 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* ESL Life Sim — layout + overrides on top of Anagram theme */
 
 body {
-  margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
-  background: #f5f0e8;
-  color: #1a1a1a;
+  background: var(--bg-app);
   min-height: 100vh;
-}
-
-.hidden {
-  display: none !important;
 }
 
 .stage {
   min-height: 100vh;
-  padding: 1.5rem;
+  min-height: 100dvh;
+  padding: var(--s-4);
   max-width: 960px;
   margin: 0 auto;
 }
 
 .stage-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--s-5);
 }
 
 .stage-header h1,
 .stage-header h2 {
-  margin: 0 0 0.25rem;
+  margin: 0 0 var(--s-1);
+  font-family: var(--font-playful);
+  color: var(--ink-1);
 }
 
 .stage-subtitle {
   margin: 0;
-  color: #555;
+  font-family: var(--font-typewriter);
+  color: var(--ink-2);
 }
 
 .boot-error {
-  background: #fee;
-  color: #900;
-  padding: 1rem;
+  background: var(--bad-bg);
+  color: var(--bad);
+  padding: var(--s-4);
   text-align: center;
+  font-weight: 700;
 }
 
-.btn {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  border: 1px solid #333;
-  background: #fff;
-  cursor: pointer;
-  font: inherit;
-  border-radius: 4px;
+/* Stages 3–4: game shell from theme-game.css */
+.stage--game {
+  max-width: none;
+  padding:
+    max(6px, env(safe-area-inset-top))
+    max(6px, env(safe-area-inset-right))
+    max(6px, env(safe-area-inset-bottom))
+    max(6px, env(safe-area-inset-left));
 }
 
-.btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+.stage--game .game-wrapper {
+  width: min(960px, 94vw);
+  max-width: calc(100vw - 12px);
+  height: auto;
+  min-height: min(calc(100dvh - 12px), 900px);
+  max-height: none;
 }
 
-.btn--primary {
-  background: #2d6a4f;
-  color: #fff;
-  border-color: #2d6a4f;
+.stage--game .game-content {
+  padding: var(--s-4);
+  overflow: visible;
 }
 
-.btn--category {
-  margin: 0.25rem;
-}
-
-.btn--surprise {
-  background: #fef3c7;
-}
-
-.category-picker {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.meal-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.meal-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  background: #fff;
-  cursor: pointer;
-  min-width: 120px;
-  border-radius: 4px;
-}
-
-.meal-card__emoji {
-  font-size: 2rem;
-}
-
-.meal-detail {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 4px;
-}
-
-.ingredient-list {
-  margin: 0.5rem 0 0;
-  padding-left: 1.5rem;
-}
-
-.placeholder-text {
-  color: #666;
-  font-style: italic;
+/* Non-notebook panels (shelf, basket, checkout, verb bank) */
+.game-panel {
+  background: var(--surface-1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--r-md);
+  box-shadow: var(--elev-1);
+  padding: var(--s-3);
 }
 
 .shop-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: var(--s-4);
 }
 
 .shop-card {
   flex: 1;
   min-width: 180px;
-  padding: 1.5rem;
-  border: 1px solid #ccc;
-  background: #fff;
+  padding: var(--s-5);
+  border: 1px solid var(--line);
+  background: var(--surface-1);
   cursor: pointer;
   text-align: left;
-  border-radius: 4px;
+  border-radius: var(--r-md);
+  box-shadow: var(--elev-1);
   position: relative;
+  transition: border-color var(--dur-fast) ease, transform var(--dur-fast) ease;
+}
+
+.shop-card:hover:not(:disabled) {
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .shop-card--locked {
@@ -147,15 +102,16 @@ body {
 
 .shop-card__label {
   display: block;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1.1rem;
 }
 
 .shop-card__desc {
   display: block;
-  color: #666;
+  color: var(--ink-2);
   font-size: 0.9rem;
-  margin-top: 0.25rem;
+  margin-top: var(--s-1);
+  font-family: var(--font-typewriter);
 }
 
 .shop-card__lock {
@@ -166,50 +122,75 @@ body {
 
 .eating-dish {
   text-align: center;
-  padding: 2rem;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 1rem;
+  padding: var(--s-6);
+  background: var(--surface-1);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  margin-bottom: var(--s-4);
+  box-shadow: var(--elev-2);
 }
 
 .eating-dish__emoji {
   font-size: 4rem;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--s-2);
 }
 
 .eating-msg {
   text-align: center;
-  color: #555;
+  color: var(--ink-2);
+  font-family: var(--font-typewriter);
 }
 
 .eating-actions {
   display: flex;
-  gap: 0.75rem;
+  gap: var(--s-3);
   justify-content: center;
-  margin-top: 1.5rem;
+  margin-top: var(--s-5);
 }
 
-.confetti-layer {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
+/* Notebook list panels — reuse theme-menu solo notebook + ruled lines */
+.list-notebook {
+  --notebook-rules-offset: calc(2 * var(--notebook-line));
+}
+
+.list-notebook .nb-solo-heading {
+  margin-bottom: 0;
+}
+
+.list-notebook-lines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-notebook-line {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s-2);
+  width: 100%;
+  height: var(--notebook-line);
+  min-height: var(--notebook-line);
+  max-height: var(--notebook-line);
+  padding: 0 10px 2px;
+  box-sizing: border-box;
+  font-family: var(--font-typewriter);
+  font-size: 0.92rem;
+  line-height: 1;
+  color: var(--ink-1);
+}
+
+.list-notebook-line__text {
+  flex: 1 1 auto;
+  min-width: 0;
   overflow: hidden;
-  z-index: 100;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.confetti-piece {
-  position: absolute;
-  top: -10px;
-  width: 8px;
-  height: 8px;
-  animation: confetti-fall 2s ease-in forwards;
-}
-
-@keyframes confetti-fall {
-  to {
-    transform: translateY(100vh) rotate(720deg);
-    opacity: 0;
-  }
+.list-notebook-line__meta {
+  flex-shrink: 0;
+  color: var(--ink-2);
+  font-size: 0.82rem;
 }

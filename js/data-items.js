@@ -6,7 +6,7 @@ const DataItems = {
 
   async load() {
     try {
-      const res = await fetch('./data/levels.json');
+      const res = await fetch('./data/ingredients.json');
       if (!res.ok) throw new Error('Failed to load items');
       const data = await res.json();
       this.items = data.items && typeof data.items === 'object' ? data.items : {};

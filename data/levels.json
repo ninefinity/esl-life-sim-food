@@ -214,6 +214,115 @@
       "category": "pantry",
       "definition": "Clear drink with no flavor.",
       "price": { "wd": 0, "c": 65 }
+    },
+    "bowl": {
+      "emoji": "🥣",
+      "label": "bowl",
+      "plural": "bowls",
+      "category": "pantry",
+      "definition": "A round dish used for cereal or soup.",
+      "price": { "wd": 1, "c": 50 }
+    },
+    "honey": {
+      "emoji": "🍯",
+      "label": "jar of honey",
+      "plural": "jars of honey",
+      "category": "pantry",
+      "definition": "Sweet sticky food made by bees.",
+      "price": { "wd": 2, "c": 25 }
+    },
+    "salt": {
+      "emoji": "🧂",
+      "label": "salt",
+      "category": "pantry",
+      "definition": "White crystals used to season food.",
+      "price": { "wd": 0, "c": 40 }
+    },
+    "pepper": {
+      "emoji": "🌶️",
+      "label": "pepper",
+      "category": "pantry",
+      "definition": "A spice that adds a sharp taste.",
+      "price": { "wd": 0, "c": 55 }
+    },
+    "onion": {
+      "emoji": "🧅",
+      "label": "onion",
+      "plural": "onions",
+      "category": "veg",
+      "definition": "A round vegetable with layers.",
+      "price": { "wd": 0, "c": 35 }
+    },
+    "potato": {
+      "emoji": "🥔",
+      "label": "potato",
+      "plural": "potatoes",
+      "category": "veg",
+      "definition": "A starchy root vegetable.",
+      "price": { "wd": 0, "c": 45 }
+    },
+    "broth": {
+      "emoji": "🥫",
+      "label": "carton of broth",
+      "plural": "cartons of broth",
+      "category": "pantry",
+      "definition": "Liquid used as a base for soup.",
+      "price": { "wd": 1, "c": 80 }
+    },
+    "pasta": {
+      "emoji": "🍝",
+      "label": "box of pasta",
+      "plural": "boxes of pasta",
+      "category": "pantry",
+      "definition": "Dried noodles made from flour.",
+      "price": { "wd": 1, "c": 40 }
+    },
+    "tomato-sauce": {
+      "emoji": "🍅",
+      "label": "jar of tomato sauce",
+      "plural": "jars of tomato sauce",
+      "category": "pantry",
+      "definition": "Red sauce made from tomatoes.",
+      "price": { "wd": 2, "c": 10 }
+    },
+    "garlic": {
+      "emoji": "🧄",
+      "label": "garlic",
+      "category": "veg",
+      "definition": "A strong-smelling bulb used for flavor.",
+      "price": { "wd": 0, "c": 50 }
+    },
+    "apple": {
+      "emoji": "🍎",
+      "label": "apple",
+      "plural": "apples",
+      "category": "veg",
+      "definition": "A round sweet fruit.",
+      "price": { "wd": 0, "c": 75 }
+    },
+    "flour": {
+      "emoji": "🌾",
+      "label": "bag of flour",
+      "plural": "bags of flour",
+      "category": "bakery",
+      "definition": "White powder used for baking.",
+      "price": { "wd": 1, "c": 60 }
+    },
+    "sugar": {
+      "emoji": "🍬",
+      "label": "bag of sugar",
+      "plural": "bags of sugar",
+      "category": "sweets",
+      "definition": "Sweet white crystals used in baking.",
+      "price": { "wd": 1, "c": 30 }
+    },
+    "chocolate-chips": {
+      "emoji": "🍫",
+      "label": "bag of chocolate chips",
+      "plural": "bags of chocolate chips",
+      "category": "sweets",
+      "definition": "Small pieces of chocolate for cookies.",
+      "price": { "wd": 2, "c": 40 }
     }
   }
 }

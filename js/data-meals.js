@@ -41,6 +41,24 @@ const DataMeals = {
     const id = ids[Math.floor(Math.random() * ids.length)];
     return { id, ...this.meals[id] };
   },
+
+  getPlayableMeals(unlockedStoreIds) {
+    return Object.entries(this.meals)
+      .filter(([, meal]) => RecipeShopping.recipeIsPlayable(meal, unlockedStoreIds))
+      .map(([id, meal]) => ({ id, ...meal }));
+  },
+
+  getRandomPlayableMeal(unlockedStoreIds) {
+    const playable = this.getPlayableMeals(unlockedStoreIds);
+    if (!playable.length) return null;
+    return playable[Math.floor(Math.random() * playable.length)];
+  },
+
+  isMealPlayable(mealId, unlockedStoreIds) {
+    const meal = this.getMeal(mealId);
+    if (!meal) return false;
+    return RecipeShopping.recipeIsPlayable(meal, unlockedStoreIds);
+  },
 };
 
 window.DataMeals = DataMeals;

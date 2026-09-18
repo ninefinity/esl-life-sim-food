@@ -1,0 +1,792 @@
+/* Stage 1 — SVG recipe book with overlaid pages + bookmark tabs */
+
+.stage--planning {
+  max-width: min(1160px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+}
+
+.recipe-book-hero {
+  margin-bottom: clamp(0.25rem, 1dvh, 0.6rem);
+}
+
+.recipe-book {
+  /* Cover top = 58/800 in book-open.svg */
+  --cover-top: calc(58 / 800 * 100%);
+  --tab-h: clamp(120px, 15vw, 156px);
+  --tab-w: calc(var(--tab-h) * 237 / 616);
+  --page-footer-top: calc(678 / 800 * 100%); /* shared baseline for category + page # */
+  --page-heading-top: calc(var(--tab-h) * 0.42 - 22px); /* title + Ingredients row */
+  --title-size: clamp(1.65rem, 4vw, 2.25rem);
+  --title-leading: 1.12;
+  --title-line: calc(var(--title-size) * var(--title-leading));
+  /* Inactive peeks: how much of the flipped ribbon sticks ABOVE the cover */
+  --peek: 26px;
+  --peek-hover: 38px;
+  --peek-active: 42px; /* selected meal tip sticks up a bit more */
+  --tab-on-page: 14px; /* hanging ribbons sit higher on the rim */
+  --ribbon-clear: calc(var(--tab-w) + 0.85rem); /* text clears hanging ribbons */
+  --paper-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Open category: always hangs on the LEFT page (never over text).
+   Meal tabs: fishtail peeks along the top only.
+   Surprise: always hangs on the RIGHT page margin (dice).
+═══════════════════════════════════════════════════════ */
+.recipe-ribbon-active {
+  position: absolute;
+  top: var(--cover-top);
+  left: calc(52 / 1200 * 100%);
+  z-index: 4;
+  width: var(--tab-w);
+  height: var(--tab-h);
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.recipe-ribbon-active .tab-shell {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: translate3d(0, calc(-1 * var(--tab-on-page)), 0) rotate(0deg);
+  filter: drop-shadow(1px 3px 0 rgba(40, 24, 12, 0.18))
+          drop-shadow(0 6px 8px rgba(40, 24, 12, 0.16));
+}
+
+.recipe-ribbon-active .bookmark-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.recipe-ribbon-active .bookmark-label,
+.recipe-ribbon-active .bookmark-dice {
+  display: none;
+}
+
+.recipe-tabs {
+  position: absolute;
+  top: var(--cover-top);
+  /* Peek row sits across both pages, leaving the spine clear */
+  left: calc(150 / 1200 * 100%);
+  right: calc(150 / 1200 * 100%);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: clamp(0.45rem, 1.4vw, 1rem);
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+.recipe-tab {
+  position: relative;
+  z-index: 1; /* under .recipe-book__art */
+  display: block;
+  width: var(--tab-w);
+  height: var(--tab-h);
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  --peek: 24px;
+}
+
+.recipe-tab:nth-child(1) { --peek: 22px; }
+.recipe-tab:nth-child(2) { --peek: 28px; }
+.recipe-tab:nth-child(3) { --peek: 24px; }
+.recipe-tab:nth-child(4) { --peek: 34px; }
+.recipe-tab:nth-child(5) { --peek: 26px; }
+
+/* Breakfast / lunch / dinner on the left page; snack / dessert on the right */
+.recipe-tab--snack {
+  margin-left: auto;
+}
+
+/* Surprise hangs on the right page margin — never over recipe text */
+.recipe-tab--surprise {
+  position: absolute;
+  top: 0;
+  right: calc(-100 / 1200 * 100%);
+  left: auto;
+  margin: 0;
+  z-index: 4;
+}
+
+.tab-shell {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  /* Meal tabs: fishtail up, short peek above the cover */
+  transform: translate3d(0, calc(-1 * var(--peek)), 0) rotate(180deg);
+  transition: transform 300ms var(--paper-ease), filter 300ms var(--paper-ease);
+  will-change: transform;
+  filter: none;
+}
+
+.bookmark-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.bookmark-label {
+  display: none;
+}
+
+/* Dice on the always-up Surprise ribbon */
+.bookmark-dice {
+  position: absolute;
+  left: calc(50% + 3px);
+  top: 42%;
+  width: 58%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 2px 3px rgba(30, 14, 4, 0.28));
+}
+
+.recipe-tab--surprise:hover .bookmark-dice,
+.recipe-tab--surprise:focus-visible .bookmark-dice {
+  transform: translate(-50%, -50%) scale(1.06) rotate(-8deg);
+}
+
+.recipe-tab--surprise .tab-shell {
+  transform: translate3d(0, calc(-1 * var(--tab-on-page)), 0) rotate(0deg);
+  filter: drop-shadow(1px 3px 0 rgba(40, 24, 12, 0.18))
+          drop-shadow(0 6px 8px rgba(40, 24, 12, 0.16));
+  transition:
+    transform 300ms var(--paper-ease),
+    filter 300ms var(--paper-ease);
+}
+
+.recipe-tab--surprise .bookmark-dice {
+  transition: transform 280ms var(--paper-ease);
+}
+
+.recipe-tab--surprise .bookmark-dice.is-rolling {
+  animation: bookmark-dice-roll 520ms var(--paper-ease) both;
+}
+
+@keyframes bookmark-dice-roll {
+  0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  35% { transform: translate(-50%, -58%) rotate(140deg) scale(1.12); }
+  70% { transform: translate(-50%, -48%) rotate(280deg) scale(1.04); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recipe-tab--surprise .bookmark-dice {
+    transition: none;
+  }
+
+  .recipe-tab--surprise .bookmark-dice.is-rolling {
+    animation: none;
+  }
+}
+
+/* Hover inactive meal peeks: slide a little further OUT (up) */
+@media (hover: hover) and (pointer: fine) {
+  .recipe-tab:hover:not(.recipe-tab--surprise):not(.recipe-tab--active):not([aria-selected="true"]) .tab-shell {
+    transform: translate3d(0, calc(-1 * var(--peek-hover)), 0) rotate(180deg);
+  }
+}
+
+/* Selected meal tab: hide the peek — that ribbon is hanging on the left page */
+.recipe-tab.recipe-tab--active:not(.recipe-tab--surprise),
+.recipe-tab[aria-selected="true"]:not(.recipe-tab--surprise) {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Keyboard focus can still land on the hidden tab via arrows; keep a focus ring space */
+.recipe-tab:focus-visible:not(.recipe-tab--surprise):not(.recipe-tab--active):not([aria-selected="true"]) .tab-shell {
+  transform: translate3d(0, calc(-1 * var(--peek-active)), 0) rotate(180deg);
+  filter: none;
+}
+
+.recipe-tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .recipe-tab--surprise:hover .tab-shell {
+    transform: translate3d(0, calc(-1 * var(--tab-on-page) + 2px), 0) rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-shell {
+    transition: none;
+  }
+}
+
+/* ── Book frame + overlays (coords from 1200×800 viewBox) ── */
+.recipe-panel.recipe-book__frame,
+.recipe-book__frame {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  aspect-ratio: 1200 / 800;
+  margin-top: 0;
+  overflow: visible;
+}
+
+.recipe-book__art {
+  position: relative;
+  z-index: 2; /* covers inactive ribbons; selected use z-index 4 */
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 14px 30px rgba(30, 14, 4, 0.2));
+}
+
+.recipe-spread {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  perspective: 1400px;
+}
+
+.recipe-leaf {
+  position: absolute;
+  top: calc(92 / 800 * 100%);
+  width: calc(552 / 1200 * 100%);
+  height: calc(596 / 800 * 100%);
+  margin: 0;
+  /* Top padding clears hanging ribbons; side padding clears left/right margins */
+  padding:
+    calc(var(--tab-h) * 0.78)
+    clamp(0.85rem, 2vw, 1.4rem)
+    clamp(0.7rem, 1.8vw, 1.25rem);
+  overflow: hidden; /* never scroll the book pages */
+  color: var(--ink-1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  pointer-events: auto;
+  background: transparent;
+}
+
+.recipe-leaf--left {
+  left: calc(44 / 1200 * 100%);
+  padding-inline-start: var(--ribbon-clear);
+  /* Shared with right so title + Ingredients share one baseline */
+  padding-top: var(--page-heading-top);
+  padding-bottom: 2.25rem; /* room for absolute category footer */
+}
+
+.recipe-leaf--right {
+  left: calc(604 / 1200 * 100%);
+  padding-inline-end: var(--ribbon-clear);
+  padding-inline-start: calc(clamp(0.85rem, 2vw, 1.4rem) + 18px);
+  padding-top: var(--page-heading-top);
+  padding-bottom: 2.25rem; /* clear the page-number corner */
+}
+
+/* ── Page content ── */
+.recipe-kicker {
+  margin: 0;
+  font-family: var(--font-typewriter);
+  font-size: clamp(0.85rem, 1.6vw, 1rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.recipe-leaf-footer {
+  position: absolute;
+  left: var(--ribbon-clear);
+  /* Same baseline as the instructions-page number (frame y = 678/800) */
+  top: calc((678 - 92) / 596 * 100%);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  min-height: 1.5rem;
+  transform: translateY(-50%);
+}
+
+.recipe-leaf-footer .recipe-pager__btn[hidden] {
+  display: none;
+}
+
+.recipe-leaf-footer .recipe-pager__btn:not([hidden]) {
+  color: var(--ink-2);
+}
+
+.recipe-title-slot {
+  /* Fixed 2-line band; title pins to the BOTTOM so wraps grow UP */
+  height: calc(2 * var(--title-line));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  /* Pull the band up so line 0 sits in the space above the normal baseline */
+  margin-top: calc(-1 * var(--title-line));
+}
+
+.recipe-title {
+  margin: 0;
+  font-family: var(--font-playful);
+  font-size: var(--title-size);
+  font-weight: 700;
+  line-height: var(--title-leading);
+  letter-spacing: -0.02em;
+  color: var(--tile-letter-ink);
+}
+
+.recipe-lede,
+.recipe-blank,
+.recipe-hint {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-typewriter);
+  font-size: clamp(0.88rem, 1.7vw, 1rem);
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.recipe-portrait {
+  display: grid;
+  place-items: center;
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 100%;
+  margin: 0.25rem 0;
+  overflow: hidden;
+  container-type: size;
+}
+
+/* Center the meal image on the left page (ignore asymmetric ribbon padding) */
+.recipe-leaf--left .recipe-portrait {
+  width: calc(100% + var(--ribbon-clear) + clamp(0.85rem, 2vw, 1.4rem));
+  max-width: none;
+  margin-left: calc(-1 * var(--ribbon-clear));
+  margin-right: calc(-1 * clamp(0.85rem, 2vw, 1.4rem));
+}
+
+.recipe-portrait__glyph,
+.recipe-portrait__frame {
+  display: grid;
+  place-items: center;
+  /* Fit the remaining page space — never force a size that causes scroll */
+  --portrait-size: min(100%, 100cqmin);
+  width: var(--portrait-size);
+  height: var(--portrait-size);
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 2px solid rgba(180, 160, 130, 0.45);
+  animation: recipe-portrait-in 480ms var(--ease-standard) both;
+}
+
+.recipe-portrait__glyph {
+  font-size: clamp(5rem, 18vw, 10rem);
+  background:
+    radial-gradient(circle at 35% 30%, #fffef9 0%, #f3ebe0 55%, #e6d8c6 100%);
+  box-shadow: 0 2px 0 rgba(255, 255, 255, 0.7) inset;
+}
+
+/* Hard circular crop so tall (portrait) photos can't stretch the circle */
+.recipe-portrait__frame {
+  overflow: hidden;
+  background: #f3ebe0;
+}
+
+.recipe-portrait__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.recipe-difficulty {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin: 0.25rem 0 0;
+  flex-shrink: 0;
+  font-family: var(--font-typewriter);
+}
+
+.recipe-difficulty__stars {
+  letter-spacing: 0.08em;
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+}
+
+.recipe-difficulty__stars-on {
+  color: #c8860a;
+}
+
+.recipe-difficulty__stars-off {
+  color: rgba(70, 48, 24, 0.28);
+}
+
+.recipe-difficulty__text {
+  font-size: clamp(0.82rem, 1.55vw, 0.95rem);
+  color: var(--ink-2);
+}
+
+.recipe-section-heading {
+  margin: 0.1rem 0 0.15rem;
+  font-family: var(--font-playful);
+  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  font-weight: 700;
+  color: var(--tile-letter-ink);
+}
+
+.recipe-section-heading--ingredients {
+  /* Same top band as the meal title so both sit on one line */
+  box-sizing: border-box;
+  margin: calc(-1 * var(--title-line)) 0 0.15rem;
+  min-height: calc(2 * var(--title-line));
+  display: flex;
+  align-items: flex-end;
+  font-size: clamp(1.4rem, 3.4vw, 1.85rem);
+  line-height: var(--title-leading);
+}
+
+.recipe-ingredient-list + .recipe-section-heading {
+  margin-top: 0.7rem;
+}
+
+.recipe-ingredient-list,
+.recipe-step-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.recipe-ingredient,
+.recipe-step-line {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.4rem;
+  min-height: 1.55rem;
+  padding-bottom: 2px;
+  font-family: var(--font-typewriter);
+  font-size: clamp(0.92rem, 1.8vw, 1.08rem);
+  line-height: 1.4;
+  line-height: 1.15;
+  color: var(--ink-1);
+}
+
+.recipe-ingredient__mark {
+  flex: 0 0 1.3rem;
+  text-align: center;
+  line-height: 1;
+}
+
+.recipe-step-num {
+  flex: 0 0 1.25rem;
+  color: var(--ink-2);
+}
+
+.recipe-hint {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  font-size: clamp(0.72rem, 1.35vw, 0.8rem);
+  font-style: italic;
+}
+
+/* ── Flip overlay (right page region) ── */
+.recipe-flip {
+  position: absolute;
+  top: calc(92 / 800 * 100%);
+  left: calc(604 / 1200 * 100%);
+  width: calc(552 / 1200 * 100%);
+  height: calc(596 / 800 * 100%);
+  z-index: 5;
+  pointer-events: none;
+  transform-origin: left center;
+  transform: rotateY(0deg);
+  opacity: 0;
+  padding:
+    clamp(0.7rem, 1.8vw, 1.25rem)
+    clamp(0.85rem, 2vw, 1.4rem);
+  background: #fbf6ec;
+  box-shadow: -6px 0 18px rgba(30, 14, 4, 0.12);
+  backface-visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  box-sizing: border-box;
+}
+
+.recipe-flip.is-on {
+  opacity: 1;
+}
+
+.recipe-flip--forward.is-on {
+  animation: recipe-flip-forward 520ms var(--ease-standard) both;
+}
+
+.recipe-flip--back {
+  left: calc(44 / 1200 * 100%);
+  transform-origin: right center;
+  box-shadow: 6px 0 18px rgba(30, 14, 4, 0.12);
+}
+
+.recipe-flip--back.is-on {
+  animation: recipe-flip-back 520ms var(--ease-standard) both;
+}
+
+.recipe-spread.is-flipping-next .recipe-leaf--right,
+.recipe-spread.is-flipping-prev .recipe-leaf--left {
+  animation: recipe-page-settle 520ms var(--ease-standard) both;
+}
+
+@keyframes recipe-flip-forward {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+    box-shadow: -6px 0 18px rgba(30, 14, 4, 0.12);
+  }
+  55% {
+    box-shadow: -18px 0 28px rgba(30, 14, 4, 0.22);
+  }
+  100% {
+    transform: rotateY(-105deg);
+    opacity: 0.15;
+    box-shadow: -2px 0 8px rgba(30, 14, 4, 0.05);
+  }
+}
+
+@keyframes recipe-flip-back {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  55% {
+    box-shadow: 18px 0 28px rgba(30, 14, 4, 0.22);
+  }
+  100% {
+    transform: rotateY(105deg);
+    opacity: 0.15;
+  }
+}
+
+@keyframes recipe-page-settle {
+  0% { opacity: 0.35; filter: brightness(0.97); }
+  100% { opacity: 1; filter: none; }
+}
+
+@keyframes recipe-portrait-in {
+  from {
+    transform: scale(0.92);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ── Pager sits in the book's bottom tray ── */
+/* ── Page number + › on the instructions page (bottom-right) ── */
+.recipe-pager {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin: 0;
+  pointer-events: auto;
+}
+
+.recipe-pager--left {
+  /* Outer bottom-left corner — mirrors › on the right */
+  left: calc(56 / 1200 * 100%);
+  right: auto;
+  top: var(--page-footer-top);
+  transform: translateY(-50%);
+  justify-content: flex-start;
+}
+
+.recipe-pager--right {
+  right: calc(56 / 1200 * 100%);
+  left: auto;
+  top: var(--page-footer-top);
+  transform: translateY(-50%);
+  justify-content: flex-end;
+}
+
+.recipe-pager__btn {
+  width: auto;
+  min-width: 1.1rem;
+  height: auto;
+  padding: 0.1rem 0.2rem;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--ink-2);
+  font-family: var(--font-playful);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--dur-fast) ease;
+}
+
+.recipe-pager__btn:hover:not(:disabled) {
+  color: var(--tile-letter-ink);
+  background: transparent;
+  transform: none;
+}
+
+.recipe-pager__btn[hidden] {
+  display: none;
+}
+
+.recipe-pager__label {
+  margin: 0;
+  min-width: 0.9rem;
+  text-align: center;
+  font-family: var(--font-typewriter);
+  font-size: clamp(0.85rem, 1.6vw, 1rem);
+  letter-spacing: 0.02em;
+  color: var(--ink-2);
+}
+
+.recipe-continue {
+  margin-top: 0.85rem;
+  min-width: 12rem;
+}
+
+/* Locked recipes (full-version demo) */
+.recipe-spread.is-locked-meal .recipe-leaf {
+  filter: grayscale(0.45);
+  opacity: 0.72;
+}
+
+.recipe-lock-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.25rem;
+  z-index: 2;
+}
+
+@media (max-width: 720px) {
+  .recipe-book {
+    --tab-h: clamp(96px, 24vw, 124px);
+    --peek: 20px;
+    --peek-hover: 30px;
+    --peek-active: 32px;
+    --tab-on-page: 10px;
+  }
+
+  .recipe-tabs {
+    left: calc(130 / 1200 * 100%);
+    right: calc(130 / 1200 * 100%);
+    gap: clamp(0.2rem, 1.2vw, 0.5rem);
+  }
+
+  .recipe-tab--surprise {
+    right: calc(-70 / 1200 * 100%);
+  }
+
+  .recipe-tab:nth-child(1) { --peek: 18px; }
+  .recipe-tab:nth-child(2) { --peek: 22px; }
+  .recipe-tab:nth-child(3) { --peek: 20px; }
+  .recipe-tab:nth-child(4) { --peek: 28px; }
+  .recipe-tab:nth-child(5) { --peek: 20px; }
+
+  .recipe-leaf {
+    padding-block-end: 0.55rem;
+    padding-inline: 0.65rem;
+  }
+
+  .recipe-leaf--left {
+    padding-inline-start: var(--ribbon-clear);
+  }
+
+  .recipe-leaf--right {
+    padding-inline-end: var(--ribbon-clear);
+  }
+
+  .recipe-portrait {
+    min-height: 0;
+  }
+
+  .recipe-portrait__glyph,
+  .recipe-portrait__frame {
+    --portrait-size: min(100%, 100cqmin);
+  }
+
+  .recipe-flip,
+  .recipe-flip--back {
+    transform-origin: center center;
+  }
+
+  .recipe-flip--forward.is-on {
+    animation: recipe-flip-mobile-next 480ms var(--ease-standard) both;
+  }
+
+  .recipe-flip--back.is-on {
+    animation: recipe-flip-mobile-prev 480ms var(--ease-standard) both;
+  }
+}
+
+@keyframes recipe-flip-mobile-next {
+  0% { transform: translateX(0) scale(1); opacity: 1; }
+  100% { transform: translateX(-8%) scale(0.98); opacity: 0; }
+}
+
+@keyframes recipe-flip-mobile-prev {
+  0% { transform: translateX(0) scale(1); opacity: 1; }
+  100% { transform: translateX(8%) scale(0.98); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recipe-flip--forward.is-on,
+  .recipe-flip--back.is-on,
+  .recipe-spread.is-flipping-next .recipe-leaf--right,
+  .recipe-spread.is-flipping-prev .recipe-leaf--left,
+  .recipe-portrait__glyph,
+  .recipe-portrait__frame {
+    animation: none;
+  }
+
+  .recipe-flip.is-on {
+    opacity: 0;
+  }
+}

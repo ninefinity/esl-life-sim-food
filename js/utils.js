@@ -41,6 +41,12 @@ function clearConfetti() {
   if (layer) layer.innerHTML = '';
 }
 
+window.escapeHtml = escapeHtml;
+window.randInt = randInt;
+window.shuffle = shuffle;
+window.spawnConfetti = spawnConfetti;
+window.clearConfetti = clearConfetti;
+
 window.GameUtils = {
   escapeHtml,
   randInt,
