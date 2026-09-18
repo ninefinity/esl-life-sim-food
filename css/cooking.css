@@ -40,6 +40,11 @@
 }
 
 .recipe-blank {
+  appearance: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -92,6 +97,9 @@
 }
 
 .verb-chip {
+  appearance: none;
+  font-size: inherit;
+  color: inherit;
   padding: var(--s-2) var(--s-3);
   background: var(--tile-face);
   border: 1.5px solid var(--tile-border);
@@ -101,6 +109,18 @@
   font-family: var(--font-typewriter);
   font-weight: 400;
   box-shadow: 0 2px 0 var(--tile-stem);
+}
+
+.verb-chip--selected {
+  border-color: var(--accent);
+  background: rgba(224, 123, 57, 0.18);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.verb-chip:focus-visible,
+.recipe-blank:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .cooking-feedback {

@@ -125,9 +125,15 @@ function countMetRequirements() {
   ).length;
 }
 
+function renderScore() {
+  const scoreEl = $('score-display');
+  if (scoreEl) scoreEl.textContent = `${collected}/${totalNeeded}`;
+}
+
 function syncProgressCounts() {
   totalNeeded = (GameState.requiredIngredients || []).length;
   collected = countMetRequirements();
+  renderScore();
 }
 
 function setStatus(text) {
@@ -196,8 +202,7 @@ function renderPhase() {
     renderCart();
   }
 
-  const scoreEl = $('score-display');
-  if (scoreEl) scoreEl.textContent = `${collected}/${totalNeeded}`;
+  renderScore();
   StageMap.renderWallet?.();
 }
 

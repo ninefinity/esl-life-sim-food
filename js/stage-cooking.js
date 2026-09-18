@@ -1,6 +1,9 @@
 'use strict';
 
 const StageCooking = {
+  /** @type {string|null} verb chip armed by tap, waiting for a blank */
+  selectedVerb: null,
+
   init() {
     this.recipeEl = document.getElementById('cooking-recipe');
     this.verbBankEl = document.getElementById('cooking-verb-bank');
@@ -22,6 +25,26 @@ const StageCooking = {
       e.dataTransfer.setData('text/plain', chip.dataset.verb);
     });
 
+    // Tap to arm a verb, then tap a blank — drag-and-drop never fires on touch.
+    this.verbBankEl?.addEventListener('click', (e) => {
+      const chip = e.target.closest('.verb-chip');
+      if (!chip || GameState.cookingPhase !== 'locked') return;
+      const verb = chip.dataset.verb;
+      this.selectVerb(this.selectedVerb === verb ? null : verb);
+    });
+
+    this.recipeEl?.addEventListener('click', (e) => {
+      const blank = e.target.closest('.recipe-blank');
+      if (!blank || GameState.cookingPhase !== 'locked') return;
+      const stepIndex = Number(blank.dataset.step);
+      if (this.selectedVerb) {
+        this.placeVerb(stepIndex, this.selectedVerb);
+        this.selectVerb(null);
+      } else if (GameState.cookingAnswers[stepIndex]) {
+        this.clearBlank(stepIndex);
+      }
+    });
+
     this.recipeEl?.addEventListener('dragover', (e) => {
       const blank = e.target.closest('.recipe-blank');
       if (!blank || GameState.cookingPhase !== 'locked') return;
@@ -34,17 +57,60 @@ const StageCooking = {
       e.preventDefault();
       const verb = e.dataTransfer.getData('text/plain');
       if (!verb) return;
-      const stepIndex = Number(blank.dataset.step);
-      GameState.cookingAnswers[stepIndex] = verb;
-      blank.textContent = verb;
-      blank.classList.add('recipe-blank--filled');
+      this.placeVerb(Number(blank.dataset.step), verb);
+      this.selectVerb(null);
     });
   },
 
   enter() {
     GameState.cookingPhase = 'reveal';
     GameState.cookingAnswers = {};
+    this.selectedVerb = null;
     this.render();
+  },
+
+  selectVerb(verb) {
+    this.selectedVerb = verb;
+    this.verbBankEl?.querySelectorAll('.verb-chip').forEach((chip) => {
+      const on = chip.dataset.verb === verb;
+      chip.classList.toggle('verb-chip--selected', on);
+      chip.setAttribute('aria-pressed', String(on));
+    });
+  },
+
+  blankEl(stepIndex) {
+    return this.recipeEl?.querySelector(`.recipe-blank[data-step="${stepIndex}"]`);
+  },
+
+  placeVerb(stepIndex, verb) {
+    GameState.cookingAnswers[stepIndex] = verb;
+    const blank = this.blankEl(stepIndex);
+    if (!blank) return;
+    blank.textContent = verb;
+    blank.classList.add('recipe-blank--filled');
+  },
+
+  clearBlank(stepIndex) {
+    delete GameState.cookingAnswers[stepIndex];
+    const blank = this.blankEl(stepIndex);
+    if (!blank) return;
+    blank.textContent = '___';
+    blank.classList.remove('recipe-blank--filled');
+  },
+
+  /** Split a step around its verb so the blank lands on the verb, not word one. */
+  splitStepAroundVerb(text, verb) {
+    const escaped = String(verb).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const match = new RegExp(`\\b${escaped}\\b`, 'i').exec(text);
+    if (match) {
+      return {
+        before: text.slice(0, match.index),
+        after: text.slice(match.index + match[0].length),
+      };
+    }
+    const firstWord = /^\w+/.exec(text);
+    if (!firstWord) return { before: text, after: '' };
+    return { before: '', after: text.slice(firstWord[0].length) };
   },
 
   render() {
@@ -65,12 +131,12 @@ const StageCooking = {
       )).join('');
     } else if (phase === 'locked') {
       this.recipeEl.innerHTML = meal.recipeSteps.map((step, i) => {
-        const blanked = step.text.replace(/^\w+/, '___');
+        const { before, after } = this.splitStepAroundVerb(step.text, step.verb);
         const answer = GameState.cookingAnswers[i] || '';
         return `<li class="recipe-step">
-          ${escapeHtml(blanked.split('___')[0])}
-          <span class="recipe-blank${answer ? ' recipe-blank--filled' : ''}" data-step="${i}">${escapeHtml(answer) || '___'}</span>
-          ${escapeHtml(blanked.split('___')[1] || '')}
+          ${escapeHtml(before)}
+          <button type="button" class="recipe-blank${answer ? ' recipe-blank--filled' : ''}" data-step="${i}" aria-label="Verb for step ${i + 1}">${escapeHtml(answer) || '___'}</button>
+          ${escapeHtml(after)}
         </li>`;
       }).join('');
       this.renderVerbBank(meal);
@@ -98,8 +164,9 @@ const StageCooking = {
     const allVerbs = shuffle([...verbs, ...decoys]);
 
     this.verbBankEl.innerHTML = allVerbs.map((verb) => (
-      `<span class="verb-chip" draggable="true" data-verb="${escapeHtml(verb)}">${escapeHtml(verb)}</span>`
+      `<button type="button" class="verb-chip" draggable="true" aria-pressed="false" data-verb="${escapeHtml(verb)}">${escapeHtml(verb)}</button>`
     )).join('');
+    this.selectVerb(this.selectedVerb);
   },
 
   submit() {
@@ -112,6 +179,7 @@ const StageCooking = {
     });
 
     GameState.cookingPhase = 'submitted';
+    this.selectedVerb = null;
     this.render();
 
     if (allCorrect) {

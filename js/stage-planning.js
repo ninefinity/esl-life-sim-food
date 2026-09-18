@@ -377,10 +377,10 @@ const StagePlanning = {
     const requirements = RecipeShopping.normalizeRequirements(meal);
     const ingredients = requirements.map((req) => {
       const label = RecipeShopping.getRequirementLabel(req);
-      const firstId = req.type === 'generic' ? req.acceptsAnyOf?.[0] : req.ingredientId;
+      const firstId = RecipeShopping.getAcceptedIds(req)[0];
       const item = firstId ? DataItems.getItem(firstId) : null;
       const emoji = item?.emoji || '📦';
-      return `<li class="recipe-ingredient"><span class="recipe-ingredient__mark">${emoji}</span><span>${escapeHtml(label)}</span></li>`;
+      return `<li class="recipe-ingredient"><span class="recipe-ingredient__mark">${escapeHtml(emoji)}</span><span>${escapeHtml(label)}</span></li>`;
     }).join('');
 
     const stepsPreview = (meal.recipeSteps || [])
